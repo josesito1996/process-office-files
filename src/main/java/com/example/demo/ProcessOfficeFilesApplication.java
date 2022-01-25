@@ -46,6 +46,7 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws IOException {
+		/*
 		Locale currentLocale = Locale.getDefault();
 		log.info("Pais donde te encuentras {}", currentLocale);
 		log.info("Iniciando aplicacion... :) : fecha : " + LocalDateTime.now());
@@ -110,7 +111,7 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 				}
 				fileBase64.delete();
 		}
-	
+	*/
 	}
 
 }
