@@ -98,6 +98,7 @@ public class ProcessController {
 				headers.add("Pragma", "no-cache");
 				headers.add("Expires", "0");
 				headers.setContentLength(fileBase64.length());
+				fileBase64.delete();
 				return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
 			}
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
