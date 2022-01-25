@@ -9,6 +9,9 @@ import static com.example.demo.util.Utils.fileNameNoExtension;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -51,11 +54,10 @@ public class ProcessController {
 	
 	
 	@GetMapping(path = "/test")
-	public String variableEntorno() {
-		System.getenv().forEach((key,value) ->{
-			log.info("Key " + key + ", Value "+ value);
-		});
-		return System.getenv("FILES_FOLDER");
+	public Map<String, String> variableEntorno() {
+		final String dirPath = System.getProperty("java.io.tmpdir");
+		log.info("Temp {}", dirPath);
+		return System.getenv();
 	}
 	
 	@PostMapping(path = "/getFile")

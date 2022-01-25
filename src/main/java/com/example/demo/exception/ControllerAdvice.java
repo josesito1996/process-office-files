@@ -61,4 +61,12 @@ public class ControllerAdvice {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), LocalDateTime.now(),
                 ex.getMessage(), null);
     }
+    
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleInternalError(Exception ex) {
+    	log.error("Error {}", ex);
+    	return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), LocalDateTime.now(),
+                ex.getMessage(), null);
+    }
 }
