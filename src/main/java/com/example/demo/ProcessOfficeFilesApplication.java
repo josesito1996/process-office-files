@@ -7,6 +7,7 @@ import static com.example.demo.util.Utils.getExtension;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +45,8 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws IOException {
-		/*
-		log.info("Iniciando aplicacion... :)");
+		
+		log.info("Iniciando aplicacion... :)" + LocalDateTime.now());
 		ResourceSami resource = resourceSamiService.verUnoPorId("1a4d63cf-c012-4331-a8ea-2277a11ca9ce");
 		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 		String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder()
@@ -103,7 +104,7 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 				}
 				fileBase64.delete();
 		}
-		*/
+	
 	}
 
 }
