@@ -44,6 +44,7 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws IOException {
+		/*
 		log.info("Iniciando aplicacion... :)");
 		ResourceSami resource = resourceSamiService.verUnoPorId("1a4d63cf-c012-4331-a8ea-2277a11ca9ce");
 		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
@@ -102,6 +103,7 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 				}
 				fileBase64.delete();
 		}
+		*/
 	}
 
 }
