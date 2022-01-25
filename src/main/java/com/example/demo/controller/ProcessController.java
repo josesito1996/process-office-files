@@ -81,12 +81,12 @@ public class ProcessController {
 	public ResponseEntity<InputStreamResource> getImage(@PathVariable String id, @RequestParam(required = false, defaultValue = "false") boolean condicion) throws Exception
 			 {
 		try {
-			String fileFolder = System.getenv("FILES_FOLDER").concat("/");
+			// String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 			ResourceSami resource = resourceSamiService.verUnoPorId(id);
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 					.idFile(resource.getId().concat(getExtension(resource.getFileName()))).type(resource.getType())
 					.fileName(resource.getCustomFileName()).bucketName("recursos-sami").build());
-			File fileBase64 = base64ToFile(base64, fileFolder, resource.getFileName());
+			File fileBase64 = base64ToFile(base64, "", resource.getFileName());
 			if (condicion) {
 				String extension = getExtension(fileBase64.getName());
 				File filePng = null;

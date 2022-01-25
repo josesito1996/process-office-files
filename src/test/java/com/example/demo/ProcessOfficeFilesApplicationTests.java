@@ -12,7 +12,10 @@ import org.springframework.boot.web.server.LocalServerPort;
 import com.example.demo.controller.ProcessController;
 import com.example.demo.model.FileRequest;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@Slf4j
 class ProcessOfficeFilesApplicationTests {
 
 	@LocalServerPort
@@ -26,11 +29,13 @@ class ProcessOfficeFilesApplicationTests {
 
 	@Test
 	void contextLoads() {
+		log.info("ProcessOfficeFilesApplicationTests.contextLoads");
 		assertThat(controller).isNotNull();
 	}
 
 	@Test
 	void controllerTest() throws Exception {
+		log.info("ProcessOfficeFilesApplicationTests.controllerTest");
 		String id = "67f4a66f-6d89-41bb-b639-372a078acb43";
 		assertThat(this.restTemplate.postForObject("http://localhost:" + port + "/api-files/getFile",
 				FileRequest.builder().idFile(id).build(), String.class))

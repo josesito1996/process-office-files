@@ -24,7 +24,8 @@ import lombok.extern.slf4j.Slf4j;
 public class ImageServiceImpl implements ImageService {
 
 	public String filesFolder () {
-		return System.getenv("FILES_FOLDER").concat("/");
+		//return System.getenv("FILES_FOLDER").concat("/");
+		return "";
 	}
 	
 	@Override
