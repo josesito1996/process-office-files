@@ -163,7 +163,7 @@ public class ProcessController {
 				}
 				if (filePng.delete()) {
 					String url = "http://samyofficefiles-env.eba-zh8kupum.us-east-2.elasticbeanstalk.com/api-files/fileTest/";
-					String filePngName = resource.getId().concat(getExtension(fileNamePng));
+					String filePngName = resource.getId();
 					resource.setPngFileName(fileNamePng);
 					resource.setUrl(url.concat(filePngName).concat("?condicion=true"));
 					return resourceSamiService.modificar(resource).getId();
