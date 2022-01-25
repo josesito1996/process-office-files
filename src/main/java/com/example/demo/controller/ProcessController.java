@@ -64,7 +64,9 @@ public class ProcessController {
 	public Map<String, String> variableEntorno() {
 		final String dirPath = System.getProperty("java.io.tmpdir");
 		log.info("Temp {}", dirPath);
-		return System.getenv();
+		Map<String, String> folders = System.getenv();
+		folders.put("tmp_dir", dirPath);
+		return folders;
 	}
 
 	@GetMapping(path = "/lambdaTest/{id}")
@@ -76,61 +78,65 @@ public class ProcessController {
 	}
 
 	@GetMapping(path = "/fileTest/{id}")
-	public ResponseEntity<InputStreamResource> getImage(@PathVariable String id, @RequestParam(required = false, defaultValue = "false") boolean condicion)
-			throws FileNotFoundException {
-		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
-		ResourceSami resource = resourceSamiService.verUnoPorId(id);
-		String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
-				.idFile(resource.getId().concat(getExtension(resource.getFileName()))).type(resource.getType())
-				.fileName(resource.getCustomFileName()).bucketName("recursos-sami").build());
-		File fileBase64 = base64ToFile(base64, fileFolder, resource.getFileName());
-		if (condicion) {
-			String extension = getExtension(fileBase64.getName());
-			File filePng = null;
-			switch (extension) {
-			case ".docx":
-				filePng = imageService.imageWord(fileBase64);
-				break;
-			case ".xlsx":
-				filePng = imageService.imageExcel(fileBase64);
-				break;
-			case ".pptx":
-				filePng = imageService.imagePpt(fileBase64);
-				break;
-			case ".pdf":
-				filePng = imageService.imagePdf(fileBase64);
-				break;
-			default:
-				break;
+	public ResponseEntity<InputStreamResource> getImage(@PathVariable String id, @RequestParam(required = false, defaultValue = "false") boolean condicion) throws Exception
+			 {
+		try {
+			String fileFolder = System.getenv("FILES_FOLDER").concat("/");
+			ResourceSami resource = resourceSamiService.verUnoPorId(id);
+			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
+					.idFile(resource.getId().concat(getExtension(resource.getFileName()))).type(resource.getType())
+					.fileName(resource.getCustomFileName()).bucketName("recursos-sami").build());
+			File fileBase64 = base64ToFile(base64, fileFolder, resource.getFileName());
+			if (condicion) {
+				String extension = getExtension(fileBase64.getName());
+				File filePng = null;
+				switch (extension) {
+				case ".docx":
+					filePng = imageService.imageWord(fileBase64);
+					break;
+				case ".xlsx":
+					filePng = imageService.imageExcel(fileBase64);
+					break;
+				case ".pptx":
+					filePng = imageService.imagePpt(fileBase64);
+					break;
+				case ".pdf":
+					filePng = imageService.imagePdf(fileBase64);
+					break;
+				default:
+					break;
+				}
+				InputStreamResource inputResource = new InputStreamResource(new FileInputStream(filePng));
+				HttpHeaders headers = new HttpHeaders();
+				headers.setContentType(MediaType.parseMediaType("image/png"));
+				headers.add("Access-Control-Allow-Origin", "*");
+				headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
+				headers.add("Access-Control-Allow-Headers", "Content-Type");
+				headers.add("Content-Disposition", "filename=" + filePng.getName());
+				headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+				headers.add("Pragma", "no-cache");
+				headers.add("Expires", "0");
+				headers.setContentLength(filePng.length());
+				return  new ResponseEntity<InputStreamResource>(
+						inputResource, headers, HttpStatus.OK);
 			}
-			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(filePng));
+			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.parseMediaType("image/png"));
+			headers.setContentType(MediaType.parseMediaType(resource.getType()));
 			headers.add("Access-Control-Allow-Origin", "*");
 			headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
 			headers.add("Access-Control-Allow-Headers", "Content-Type");
-			headers.add("Content-Disposition", "filename=" + filePng.getName());
+			headers.add("Content-Disposition", "filename=" + fileBase64.getName());
 			headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
 			headers.add("Pragma", "no-cache");
 			headers.add("Expires", "0");
-			headers.setContentLength(filePng.length());
+			headers.setContentLength(fileBase64.length());
+			fileBase64.delete();
 			return  new ResponseEntity<InputStreamResource>(
-					inputResource, headers, HttpStatus.OK);
+				    inputResource, headers, HttpStatus.OK);	
+		} catch (Exception e) {
+			throw new Exception("Error {}" + e);
 		}
-		InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.parseMediaType(resource.getType()));
-		headers.add("Access-Control-Allow-Origin", "*");
-		headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
-		headers.add("Access-Control-Allow-Headers", "Content-Type");
-		headers.add("Content-Disposition", "filename=" + fileBase64.getName());
-		headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-		headers.add("Pragma", "no-cache");
-		headers.add("Expires", "0");
-		headers.setContentLength(fileBase64.length());
-		fileBase64.delete();
-		return  new ResponseEntity<InputStreamResource>(
-			    inputResource, headers, HttpStatus.OK);
 	}
 
 	@PostMapping(path = "/getFile")
