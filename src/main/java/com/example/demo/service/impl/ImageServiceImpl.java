@@ -89,7 +89,7 @@ public class ImageServiceImpl implements ImageService {
 		log.info("ImageServiceImpl.imagePdf");
 		try {
 			PdfDocument pdfDocument = new PdfDocument();
-			pdfDocument.loadFromFile("F:\\DatosPC\\Downloads\\Modelo Operativo.pdf");
+			pdfDocument.loadFromFile(filePdf.getAbsolutePath());
 			BufferedImage bufferedImage = pdfDocument.saveAsImage(0, PdfImageType.Bitmap);
 			File filePng = new File("pdf-image.png");
 			ImageIO.write(bufferedImage, "PNG", filePng);
