@@ -38,7 +38,7 @@
 			<artifactId>spire-office</artifactId>
 			<scope>system</scope>
 			<version>1.0</version>
-			<systemPath>${pom.basedir}/src/main/resources/spire-office.jar</systemPath>
+			<systemPath>${basedir}/src/main/resources/spire-office.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -84,13 +84,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 		<finalName>process-office-files</finalName>
