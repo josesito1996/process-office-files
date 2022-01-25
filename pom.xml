@@ -36,7 +36,9 @@
 		<dependency>
 			<groupId>com.spire.office</groupId>
 			<artifactId>spire-office</artifactId>
+			<scope>system</scope>
 			<version>1.0</version>
+			<systemPath>${project.basedir}/lib/spire-office.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -74,6 +76,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<includeSystemScope>true</includeSystemScope>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -81,28 +84,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>install-Transformation lib</id>
-						<phase>clean</phase>
-						<configuration>
-							<file>${basedir}/src/main/resources/spire-office.jar</file>
-							<repositoryLayout>default</repositoryLayout>
-							<groupId>com.spire.office</groupId>
-							<artifactId>spire-office</artifactId>
-							<version>1.0</version>
-							<packaging>jar</packaging>
-							<generatePom>true</generatePom>
-						</configuration>
-						<goals>
-							<goal>install-file</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 		<finalName>process-office-files</finalName>
