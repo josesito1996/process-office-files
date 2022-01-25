@@ -83,39 +83,21 @@ public class ProcessController {
 			// String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 			ResourceSami resource = resourceSamiService.verUnoPorId(id);
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
-					.idFile(resource.getId().concat(getExtension(resource.getFileName()))).type(resource.getType())
-					.fileName(resource.getCustomFileName()).bucketName("recursos-sami").build());
-			File fileBase64 = base64ToFile(base64, "", resource.getFileName());
+					.idFile(resource.getId().concat(".png")).type("image/png")
+					.fileName(resource.getId().concat(".png")).bucketName("recursos-sami").build());
+			File fileBase64 = base64ToFile(base64, "", resource.getId().concat(".png"));
 			if (condicion) {
-				String extension = getExtension(fileBase64.getName());
-				File filePng = null;
-				switch (extension) {
-				case ".docx":
-					filePng = imageService.imageWord(fileBase64);
-					break;
-				case ".xlsx":
-					filePng = imageService.imageExcel(fileBase64);
-					break;
-				case ".pptx":
-					filePng = imageService.imagePpt(fileBase64);
-					break;
-				case ".pdf":
-					filePng = imageService.imagePdf(fileBase64);
-					break;
-				default:
-					break;
-				}
-				InputStreamResource inputResource = new InputStreamResource(new FileInputStream(filePng));
+				InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 				HttpHeaders headers = new HttpHeaders();
 				headers.setContentType(MediaType.parseMediaType("image/png"));
 				headers.add("Access-Control-Allow-Origin", "*");
 				headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
 				headers.add("Access-Control-Allow-Headers", "Content-Type");
-				headers.add("Content-Disposition", "filename=" + filePng.getName());
+				headers.add("Content-Disposition", "filename=" + fileBase64.getName());
 				headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
 				headers.add("Pragma", "no-cache");
 				headers.add("Expires", "0");
-				headers.setContentLength(filePng.length());
+				headers.setContentLength(fileBase64.length());
 				return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
 			}
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
@@ -179,10 +161,10 @@ public class ProcessController {
 					throw new BadRequestException("Error al cargar arhivo de imagen");
 				}
 				if (filePng.delete()) {
-					String url = "https://recursos-sami.s3.us-east-2.amazonaws.com/";
+					String url = "http://samyofficefiles-env.eba-zh8kupum.us-east-2.elasticbeanstalk.com/api-files/fileTest/";
 					String filePngName = resource.getId().concat(getExtension(fileNamePng));
 					resource.setPngFileName(fileNamePng);
-					resource.setUrl(url.concat(filePngName));
+					resource.setUrl(url.concat(filePngName).concat("?condition=true"));
 					return resourceSamiService.modificar(resource).getId();
 				}
 			}
