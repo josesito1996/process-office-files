@@ -65,7 +65,6 @@ public class ProcessController {
 		final String dirPath = System.getProperty("java.io.tmpdir");
 		log.info("Temp {}", dirPath);
 		Map<String, String> folders = System.getenv();
-		folders.put("tmp_dir", dirPath);
 		return folders;
 	}
 
@@ -78,8 +77,8 @@ public class ProcessController {
 	}
 
 	@GetMapping(path = "/fileTest/{id}")
-	public ResponseEntity<InputStreamResource> getImage(@PathVariable String id, @RequestParam(required = false, defaultValue = "false") boolean condicion) throws Exception
-			 {
+	public ResponseEntity<InputStreamResource> getImage(@PathVariable String id,
+			@RequestParam(required = false, defaultValue = "false") boolean condicion) throws Exception {
 		try {
 			// String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 			ResourceSami resource = resourceSamiService.verUnoPorId(id);
@@ -117,8 +116,7 @@ public class ProcessController {
 				headers.add("Pragma", "no-cache");
 				headers.add("Expires", "0");
 				headers.setContentLength(filePng.length());
-				return  new ResponseEntity<InputStreamResource>(
-						inputResource, headers, HttpStatus.OK);
+				return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
 			}
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 			HttpHeaders headers = new HttpHeaders();
@@ -132,8 +130,7 @@ public class ProcessController {
 			headers.add("Expires", "0");
 			headers.setContentLength(fileBase64.length());
 			fileBase64.delete();
-			return  new ResponseEntity<InputStreamResource>(
-				    inputResource, headers, HttpStatus.OK);	
+			return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
 		} catch (Exception e) {
 			throw new Exception("Error {}" + e);
 		}
@@ -145,11 +142,11 @@ public class ProcessController {
 		if (resource.getId() == null) {
 			return "";
 		}
-		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
+		// String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 		String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 				.idFile(resource.getId().concat(getExtension(resource.getFileName()))).type(resource.getType())
 				.fileName(resource.getCustomFileName()).bucketName("recursos-sami").build());
-		File fileBase64 = base64ToFile(base64, fileFolder, resource.getFileName());
+		File fileBase64 = base64ToFile(base64, "", resource.getFileName());
 		if (fileBase64.exists()) {
 			String extension = getExtension(fileBase64.getName());
 			File filePng = null;
