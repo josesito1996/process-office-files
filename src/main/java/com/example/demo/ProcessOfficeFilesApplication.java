@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -45,8 +46,9 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws IOException {
-		
-		log.info("Iniciando aplicacion... :)" + LocalDateTime.now());
+		Locale currentLocale = Locale.getDefault();
+		log.info("Pais donde te encuentras {}", currentLocale);
+		log.info("Iniciando aplicacion... :) : fecha : " + LocalDateTime.now());
 		ResourceSami resource = resourceSamiService.verUnoPorId("1a4d63cf-c012-4331-a8ea-2277a11ca9ce");
 		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 		String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder()
