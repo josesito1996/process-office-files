@@ -50,7 +50,9 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 		log.info("Pais donde te encuentras {}", currentLocale);
 		log.info("Iniciando aplicacion... :) : fecha : " + LocalDateTime.now());
 		ResourceSami resource = resourceSamiService.verUnoPorId("1a4d63cf-c012-4331-a8ea-2277a11ca9ce");
+		log.info("Resource SAMI {}", resource);
 		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
+		log.info("Folder de arhivo {}", fileFolder);
 		String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder()
 				.httpMethod("GET")
 				.idFile(resource.getId().concat(getExtension(resource.getFileName())))
@@ -58,7 +60,9 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 				.fileName(resource.getCustomFileName())
 				.bucketName("recursos-sami")
 				.build());
+		log.info("base64 {}", base64);
 			File fileBase64 = base64ToFile(base64, fileFolder, resource.getId().concat(getExtension(resource.getFileName())));
+			log.info("FileBase64 {}", fileBase64);
 			if (fileBase64.exists()) {
 				String extension = getExtension(fileBase64.getName());
 				File filePng = null;
