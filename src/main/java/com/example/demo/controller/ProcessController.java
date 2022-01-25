@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +46,18 @@ public class ProcessController {
 	@Autowired
 	ResourceSamiService resourceSamiService;
 
+	@Autowired
+	Environment entornos;
+	
+	
+	@GetMapping(path = "/test")
+	public String variableEntorno() {
+		System.getenv().forEach((key,value) ->{
+			log.info("Key " + key + ", Value "+ value);
+		});
+		return System.getenv("FILES_FOLDER");
+	}
+	
 	@PostMapping(path = "/getFile")
 	public String getFile(@RequestBody FileRequest request) {
 		ResourceSami resource = resourceSamiService.verUnoPorId(request.getIdFile());
