@@ -56,7 +56,7 @@ public class ProcessOfficeFilesApplication implements CommandLineRunner {
 				.fileName(resource.getCustomFileName())
 				.bucketName("recursos-sami")
 				.build());
-			File fileBase64 = base64ToFile(base64, fileFolder, resource.getFileName());
+			File fileBase64 = base64ToFile(base64, fileFolder, resource.getId().concat(getExtension(resource.getFileName())));
 			if (fileBase64.exists()) {
 				String extension = getExtension(fileBase64.getName());
 				File filePng = null;
