@@ -64,6 +64,7 @@ public class ProcessController {
 		if (resource.getId() == null) {
 			return "";
 		}
+		String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 		String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder()
 				.httpMethod("GET")
 				.idFile(resource.getId().concat(getExtension(resource.getFileName())))
@@ -71,7 +72,7 @@ public class ProcessController {
 				.fileName(resource.getCustomFileName())
 				.bucketName("recursos-sami")
 				.build());
-			File fileBase64 = base64ToFile(base64, "", resource.getFileName());
+			File fileBase64 = base64ToFile(base64, fileFolder, resource.getFileName());
 			if (fileBase64.exists()) {
 				String extension = getExtension(fileBase64.getName());
 				File filePng = null;

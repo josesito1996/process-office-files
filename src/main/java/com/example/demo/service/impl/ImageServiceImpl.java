@@ -23,6 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class ImageServiceImpl implements ImageService {
 
+	public String filesFolder () {
+		return System.getenv("FILES_FOLDER").concat("/");
+	}
+	
 	@Override
 	public File imageWord(File fileWord) {
 		log.info("ImageServiceImpl.imageWord");
@@ -30,7 +34,7 @@ public class ImageServiceImpl implements ImageService {
 			Document documentWord = new Document();
 			documentWord.loadFromFile(fileWord.getAbsolutePath());
 			BufferedImage image = documentWord.saveToImages(0, ImageType.Bitmap);
-			File filePng = new File("word-image.png");
+			File filePng = new File(filesFolder() + "word-image.png");
 			ImageIO.write(image, "PNG", filePng);
 			documentWord.dispose();
 			fileWord.delete();
@@ -48,7 +52,7 @@ public class ImageServiceImpl implements ImageService {
 			Presentation presentation = new Presentation();
 			presentation.loadFromFile(filePpt.getAbsolutePath());
 			int cantDiapositivas = presentation.getSlides().getCount();
-			File filePng = new File("power-point-image.png");
+			File filePng = new File(filesFolder() + "power-point-image.png");
 			for (int i = 0; i < cantDiapositivas; i++) {
 				if (i == 0) {
 					BufferedImage image = presentation.getSlides().get(i).saveAsImage();
@@ -73,7 +77,7 @@ public class ImageServiceImpl implements ImageService {
 			Worksheet sheet = workbook.getWorksheets().get(0);
 			BufferedImage bufferedImage = sheet.toImage(sheet.getFirstRow(), sheet.getFirstColumn(), sheet.getLastRow(),
 					sheet.getLastColumn());
-			File filePng = new File("excel-image.png");
+			File filePng = new File(filesFolder() + "excel-image.png");
 			ImageIO.write(bufferedImage, "PNG", filePng);
 			workbook.dispose();
 			fileExcel.delete();
@@ -91,7 +95,7 @@ public class ImageServiceImpl implements ImageService {
 			PdfDocument pdfDocument = new PdfDocument();
 			pdfDocument.loadFromFile(filePdf.getAbsolutePath());
 			BufferedImage bufferedImage = pdfDocument.saveAsImage(0, PdfImageType.Bitmap);
-			File filePng = new File("pdf-image.png");
+			File filePng = new File(filesFolder() + "pdf-image.png");
 			ImageIO.write(bufferedImage, "PNG", filePng);
 			pdfDocument.dispose();
 			filePdf.delete();
