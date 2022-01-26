@@ -1,19 +1,19 @@
 package com.example.demo.controller;
 
-import static com.example.demo.util.Utils.copyInputStreamToFile;
 import static com.example.demo.util.Utils.base64ToFile;
+import static com.example.demo.util.Utils.copyInputStreamToFile;
+import static com.example.demo.util.Utils.fileNameNoExtension;
 import static com.example.demo.util.Utils.fileToBase64;
 import static com.example.demo.util.Utils.getExtension;
-import static com.example.demo.util.Utils.fileNameNoExtension;
+import static com.example.demo.util.Contants.REGEX_UUID;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -22,6 +22,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,19 +36,26 @@ import com.example.demo.exception.BadRequestException;
 import com.example.demo.lambda.LambdaFileBase64Request;
 import com.example.demo.lambda.LambdaFileRequest;
 import com.example.demo.lambda.LambdaUploadFileRequest;
+import com.example.demo.model.ActuacionFileRequest;
+import com.example.demo.model.ActuacionFileResponse;
 import com.example.demo.model.FileRequest;
 import com.example.demo.model.ResourceSami;
+import com.example.demo.service.ActuacionFileService;
 import com.example.demo.service.ImageService;
 import com.example.demo.service.LambdaService;
 import com.example.demo.service.ResourceSamiService;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Validated
 @RestController
 @RequestMapping("/api-files")
 @Slf4j
 public class ProcessController {
 
+	@Autowired
+	ActuacionFileService actuacionFileService;
+	
 	@Autowired
 	ImageService imageService;
 
@@ -59,14 +67,6 @@ public class ProcessController {
 
 	@Autowired
 	Environment entornos;
-
-	@GetMapping(path = "/test")
-	public Map<String, String> variableEntorno() {
-		final String dirPath = System.getProperty("java.io.tmpdir");
-		log.info("Temp {}", dirPath);
-		Map<String, String> folders = System.getenv();
-		return folders;
-	}
 
 	@GetMapping(path = "/lambdaTest/{id}")
 	public String lambdaTest(@PathVariable String id) {
@@ -83,27 +83,12 @@ public class ProcessController {
 			// String fileFolder = System.getenv("FILES_FOLDER").concat("/");
 			ResourceSami resource = resourceSamiService.verUnoPorId(id);
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
-					.idFile(resource.getId().concat(".png")).type("image/png")
-					.fileName(resource.getId().concat(".png")).bucketName("recursos-sami").build());
+					.idFile(resource.getId().concat(".png")).type("image/png").fileName(resource.getId().concat(".png"))
+					.bucketName(condicion ? "recursos-sami" : "").build());
 			File fileBase64 = base64ToFile(base64, "", resource.getId().concat(".png"));
-			if (condicion) {
-				InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
-				HttpHeaders headers = new HttpHeaders();
-				headers.setContentType(MediaType.parseMediaType("image/png"));
-				headers.add("Access-Control-Allow-Origin", "*");
-				headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
-				headers.add("Access-Control-Allow-Headers", "Content-Type");
-				headers.add("Content-Disposition", "filename=" + fileBase64.getName());
-				headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-				headers.add("Pragma", "no-cache");
-				headers.add("Expires", "0");
-				headers.setContentLength(fileBase64.length());
-				fileBase64.delete();
-				return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
-			}
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.parseMediaType(resource.getType()));
+			headers.setContentType(MediaType.parseMediaType("image/png"));
 			headers.add("Access-Control-Allow-Origin", "*");
 			headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
 			headers.add("Access-Control-Allow-Headers", "Content-Type");
@@ -114,6 +99,20 @@ public class ProcessController {
 			headers.setContentLength(fileBase64.length());
 			fileBase64.delete();
 			return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
+			/*
+			 * InputStreamResource inputResource = new InputStreamResource(new
+			 * FileInputStream(fileBase64)); HttpHeaders headers = new HttpHeaders();
+			 * headers.setContentType(MediaType.parseMediaType(resource.getType()));
+			 * headers.add("Access-Control-Allow-Origin", "*");
+			 * headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
+			 * headers.add("Access-Control-Allow-Headers", "Content-Type");
+			 * headers.add("Content-Disposition", "filename=" + fileBase64.getName());
+			 * headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+			 * headers.add("Pragma", "no-cache"); headers.add("Expires", "0");
+			 * headers.setContentLength(fileBase64.length()); fileBase64.delete(); return
+			 * new ResponseEntity<InputStreamResource>(inputResource, headers,
+			 * HttpStatus.OK);
+			 */
 		} catch (Exception e) {
 			throw new Exception("Error {}" + e);
 		}
@@ -202,4 +201,49 @@ public class ProcessController {
 		}
 		return "";
 	}
+	
+	@PostMapping(path = "/uploadFilePngActuacion")
+	public ActuacionFileResponse uploadFile(@RequestBody ActuacionFileRequest request) {
+		return actuacionFileService.uploadFile(request);
+	}
+	
+	@GetMapping(path = "/fileTestActuacion/{id}")
+	public ResponseEntity<InputStreamResource> getImageActuacion(@Valid @PathVariable @Pattern(regexp = REGEX_UUID) String id) throws Exception {
+		try {
+			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
+					.idFile(id.concat(".png")).type("image/png").fileName(id.concat(".png"))
+					.bucketName("").build());
+			File fileBase64 = base64ToFile(base64, "", id.concat(".png"));
+			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.parseMediaType("image/png"));
+			headers.add("Access-Control-Allow-Origin", "*");
+			headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
+			headers.add("Access-Control-Allow-Headers", "Content-Type");
+			headers.add("Content-Disposition", "filename=" + fileBase64.getName());
+			headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+			headers.add("Pragma", "no-cache");
+			headers.add("Expires", "0");
+			headers.setContentLength(fileBase64.length());
+			fileBase64.delete();
+			return new ResponseEntity<InputStreamResource>(inputResource, headers, HttpStatus.OK);
+			/*
+			 * InputStreamResource inputResource = new InputStreamResource(new
+			 * FileInputStream(fileBase64)); HttpHeaders headers = new HttpHeaders();
+			 * headers.setContentType(MediaType.parseMediaType(resource.getType()));
+			 * headers.add("Access-Control-Allow-Origin", "*");
+			 * headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");
+			 * headers.add("Access-Control-Allow-Headers", "Content-Type");
+			 * headers.add("Content-Disposition", "filename=" + fileBase64.getName());
+			 * headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+			 * headers.add("Pragma", "no-cache"); headers.add("Expires", "0");
+			 * headers.setContentLength(fileBase64.length()); fileBase64.delete(); return
+			 * new ResponseEntity<InputStreamResource>(inputResource, headers,
+			 * HttpStatus.OK);
+			 */
+		} catch (Exception e) {
+			throw new Exception("Error {}" + e);
+		}
+	}
+	
 }

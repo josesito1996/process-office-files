@@ -33,11 +33,12 @@ public class LambdaServiceImpl implements LambdaService {
 			InvokeRequest invokeRequest = new InvokeRequest().withFunctionName("lambda-test").withPayload(payLoad);
 			InvokeResult result = awsLambda.invoke(invokeRequest);
 			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);
+			log.info("Lambdaresponse {}", ans);
 			JsonElement element = JsonParser.parseString(ans);
 			return element.getAsString().replace("\n", "");
 		} catch (Exception e) {
 			log.error("Error al obtener base64 {}", e);
-			return "";
+			return "---";
 		}
 	}
 
@@ -52,6 +53,7 @@ public class LambdaServiceImpl implements LambdaService {
 			InvokeResult result = awsLambda.invoke(invokeRequest);
 			log.info("REsult {}", result.getPayload());
 			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);
+			log.info("LambdaResponse {}",ans);
 			return Boolean.parseBoolean(ans);
 		} catch (Exception e) {
 			log.error("Error al cargar base64 {}", e);

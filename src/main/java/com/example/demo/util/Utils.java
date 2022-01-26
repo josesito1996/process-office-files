@@ -1,6 +1,7 @@
 package com.example.demo.util;
 
 import static com.example.demo.util.Contants.DEFAULT_BUFFER_SIZE;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -45,9 +46,13 @@ public class Utils {
 			byte[] fileContent = Files.readAllBytes(file.toPath());
 			return Base64.getEncoder().encodeToString(fileContent);
 		} catch (IOException e) {
-			log.error("Error al convertir archivo a base64 {}",e);
+			log.error("Error al convertir archivo a base64 {}", e);
 			throw new IllegalStateException("could not read file " + file, e);
 		}
+	}
+
+	public static String base64Complete(String type, String base64) {
+		return "data:".concat(type).concat(";base64,").concat(base64);
 	}
 
 	private static String getBase64Fragment(String base64) {
@@ -61,7 +66,7 @@ public class Utils {
 	public static String getExtension(String fileName) {
 		return fileName.substring(fileName.indexOf("."), fileName.length());
 	}
-	
+
 	public static String fileNameNoExtension(String fileName) {
 		return fileName.substring(0, fileName.indexOf("."));
 	}

@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -67,6 +69,15 @@ public class ControllerAdvice {
     public ErrorResponse handleInternalError(Exception ex) {
     	log.error("Error {}", ex);
     	return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), LocalDateTime.now(),
+                ex.getMessage(), null);
+    }
+    /**
+     * ConstraintViolationException
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleInternalError(ConstraintViolationException ex) {
+    	return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), LocalDateTime.now(),
                 ex.getMessage(), null);
     }
 }
