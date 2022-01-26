@@ -162,7 +162,7 @@ public class ProcessController {
 					throw new BadRequestException("Error al cargar arhivo de imagen");
 				}
 				if (filePng.delete()) {
-					String url = "http://samyofficefiles-env.eba-zh8kupum.us-east-2.elasticbeanstalk.com/api-files/fileTest/";
+					String url = "https://79z25zohcj.execute-api.us-east-2.amazonaws.com/dev/api-files/fileTest/";
 					String filePngName = resource.getId();
 					resource.setPngFileName(fileNamePng);
 					resource.setUrl(url.concat(filePngName).concat("?condicion=true"));
