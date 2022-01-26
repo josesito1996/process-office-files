@@ -75,10 +75,10 @@ public class ActuacionFileServiceImpl implements ActuacionFileService {
 						.bucketName(null)
 						.build());
 				if (resultado) {
-					String url = "https://79z25zohcj.execute-api.us-east-2.amazonaws.com/dev/api-files/fileTest/";
+					String url = "https://79z25zohcj.execute-api.us-east-2.amazonaws.com/dev/api-files/fileTestActuacion/";
 					return ActuacionFileResponse.builder()
 							.id(request.getIdArchivo())
-							.url(url.concat(fileNamePng).concat("?condicion=false"))
+							.url(url.concat(request.getIdArchivo()))
 							.build(); 
 				} else {
 					throw new BadRequestException("Error al subir archivo PNG");

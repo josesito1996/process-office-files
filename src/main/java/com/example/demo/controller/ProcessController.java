@@ -203,7 +203,7 @@ public class ProcessController {
 	}
 	
 	@PostMapping(path = "/uploadFilePngActuacion")
-	public ActuacionFileResponse uploadFile(@RequestBody ActuacionFileRequest request) {
+	public ActuacionFileResponse uploadFile(@Valid @RequestBody ActuacionFileRequest request) {
 		return actuacionFileService.uploadFile(request);
 	}
 	
