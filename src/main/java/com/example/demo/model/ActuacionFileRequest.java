@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import static com.example.demo.util.Contants.REGEX_UUID;
+import static com.example.demo.util.Contants.REGEX_MIME_TYPE;
 import java.io.Serializable;
 
 import javax.validation.constraints.NotNull;
@@ -34,6 +35,7 @@ public class ActuacionFileRequest implements Serializable {
 	
 	@NotNull
 	@NotNull
+	@Pattern(regexp = REGEX_MIME_TYPE)
 	private String type;
 	
 }
