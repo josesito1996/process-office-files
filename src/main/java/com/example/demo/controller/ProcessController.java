@@ -209,10 +209,12 @@ public class ProcessController {
 	
 	@GetMapping(path = "/fileTestActuacion/{id}")
 	public ResponseEntity<InputStreamResource> getImageActuacion(@Valid @PathVariable @Pattern(regexp = REGEX_UUID) String id) throws Exception {
-		try {
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 					.idFile(id.concat(".png")).type("image/png").fileName(id.concat(".png"))
 					.bucketName(null).build());
+			if (base64.equals("---")) {
+				throw new BadRequestException("Archivo PNG no existe en AWS");
+			}
 			File fileBase64 = base64ToFile(base64, "", id.concat(".png"));
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 			HttpHeaders headers = new HttpHeaders();
@@ -241,9 +243,6 @@ public class ProcessController {
 			 * new ResponseEntity<InputStreamResource>(inputResource, headers,
 			 * HttpStatus.OK);
 			 */
-		} catch (Exception e) {
-			throw new Exception("Error {}" + e);
-		}
 	}
 	
 }
