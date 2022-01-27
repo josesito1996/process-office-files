@@ -212,7 +212,7 @@ public class ProcessController {
 		try {
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 					.idFile(id.concat(".png")).type("image/png").fileName(id.concat(".png"))
-					.bucketName("").build());
+					.bucketName(null).build());
 			File fileBase64 = base64ToFile(base64, "", id.concat(".png"));
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 			HttpHeaders headers = new HttpHeaders();
