@@ -35,7 +35,7 @@ public class ActuacionFileServiceImpl implements ActuacionFileService {
 	public ActuacionFileResponse uploadFile(ActuacionFileRequest request) {
 		final String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 				.idFile(request.getIdArchivo().concat(getExtension(request.getNombreArchivo()))).type(request.getType())
-				.fileName(request.getNombreArchivo()).bucketName("")// Null para el bucket de arhivos de SAMY
+				.fileName(request.getNombreArchivo()).bucketName(request.getBucketName())// Null para el bucket de arhivos de SAMY
 				.build());
 		if (base64.equals("---")) {
 			throw new BadRequestException("Archivo no existe en AWS");
@@ -72,7 +72,7 @@ public class ActuacionFileServiceImpl implements ActuacionFileService {
 								.nombreArchivo(fileNamePng)
 								.base64(base64Complete(request.getType(), fileBase64))
 								.build()))
-						.bucketName(null)
+						.bucketName(request.getBucketName())
 						.build());
 				if (resultado) {
 					String url = "https://79z25zohcj.execute-api.us-east-2.amazonaws.com/dev/api-files/fileTestActuacion/";

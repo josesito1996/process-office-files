@@ -38,4 +38,9 @@ public class ActuacionFileRequest implements Serializable {
 	@Pattern(regexp = REGEX_MIME_TYPE)
 	private String type;
 	
+	
+	@NotNull
+	@NotNull
+	private String bucketName;
+	
 }

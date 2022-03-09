@@ -84,7 +84,7 @@ public class ProcessController {
 			ResourceSami resource = resourceSamiService.verUnoPorId(id);
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 					.idFile(resource.getId().concat(".png")).type("image/png").fileName(resource.getId().concat(".png"))
-					.bucketName(condicion ? "recursos-sami" : "").build());
+					.bucketName(condicion ? "recursos-sami" : "archivos-samy-v1").build());
 			File fileBase64 = base64ToFile(base64, "", resource.getId().concat(".png"));
 			InputStreamResource inputResource = new InputStreamResource(new FileInputStream(fileBase64));
 			HttpHeaders headers = new HttpHeaders();
@@ -211,7 +211,7 @@ public class ProcessController {
 	public ResponseEntity<InputStreamResource> getImageActuacion(@Valid @PathVariable @Pattern(regexp = REGEX_UUID) String id) throws Exception {
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 					.idFile(id.concat(".png")).type("image/png").fileName(id.concat(".png"))
-					.bucketName(null).build());
+					.bucketName("archivos-samy-v1").build());
 			if (base64.equals("---")) {
 				throw new BadRequestException("Archivo PNG no existe en AWS");
 			}
