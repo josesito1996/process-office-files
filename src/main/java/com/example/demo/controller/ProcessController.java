@@ -208,10 +208,10 @@ public class ProcessController {
 	}
 	
 	@GetMapping(path = "/fileTestActuacion/{id}")
-	public ResponseEntity<InputStreamResource> getImageActuacion(@Valid @PathVariable @Pattern(regexp = REGEX_UUID) String id) throws Exception {
+	public ResponseEntity<InputStreamResource> getImageActuacion(@Valid @PathVariable @Pattern(regexp = REGEX_UUID) String id,@RequestParam(defaultValue = "archivos-samy-v1") String bucketName) throws Exception {
 			String base64 = lambdaService.obtenerBase64(LambdaFileBase64Request.builder().httpMethod("GET")
 					.idFile(id.concat(".png")).type("image/png").fileName(id.concat(".png"))
-					.bucketName("archivos-samy-v1").build());
+					.bucketName(bucketName).build());
 			if (base64.equals("---")) {
 				throw new BadRequestException("Archivo PNG no existe en AWS");
 			}
