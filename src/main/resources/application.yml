@@ -1,3 +1,4 @@
+logging:  file:    path: /var/log/tomcat/spring.log
 spring:
   servlet:
     multipart:
