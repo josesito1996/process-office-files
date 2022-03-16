@@ -121,7 +121,7 @@
 	<title>
 		<band height="61" splitType="Stretch">
 			<textField>
-				<reportElement x="-20" y="-10" width="595" height="30" uuid="1386a518-52a0-4beb-9062-1b9364313b5e"/>
+				<reportElement x="-20" y="11" width="595" height="19" uuid="1386a518-52a0-4beb-9062-1b9364313b5e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="10.5" isBold="true" isUnderline="true"/>
 				</textElement>
@@ -130,198 +130,190 @@
 		</band>
 	</title>
 	<detail>
-		<band height="566" splitType="Stretch">
+		<band height="622" splitType="Stretch">
 			<textField>
-				<reportElement x="10" y="-41" width="530" height="162" uuid="88181a2b-a451-4c24-9a1e-f8a6adfcfedb"/>
+				<reportElement x="10" y="-7" width="530" height="162" uuid="88181a2b-a451-4c24-9a1e-f8a6adfcfedb"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Conste por el presente documento, el contrato de trabajo a plazo indeterminado, que celebran, de conformidad con lo dispuesto por el artículo 4° del Decreto Supremo N° 003-97-TR, Texto Único Ordenado del Decreto Legislativo N° 728, Ley de Productividad y Competitividad Laboral (en adelante, la “LPCL”), de una parte,  cuya constitución obra debidamente inscrita en la Partida Nº "+$F{nroPartida}+" del Registro de Personas Jurídicas de la Oficina Registral de "+$F{oficinaRegistral}+", con Registro Único de Contribuyente Nº "+$F{ruc}+", con domicilio en "+$F{domicilioEmpleador}+", distrito de "+$F{distritoEmpleador}+", provincia de "+$F{provinciaEmpleador}+" y departamento de "+$F{departamentoEmpleador}+", debidamente representada por "+$F{razonSocial}+", identificada con "+$F{tipoDocumentoEmpleador}+" N° "+$F{nroDocumentoEmpleador}+", a quien en adelante se denominará el “Empleador” o la “Empresa”; y, de la otra parte [*], de nacionalidad "+$F{nacionalidadTrabajador}+", identificado con Documento Nacional de Identidad Nº "+$F{nroDocumentoTrabajador}+", con domicilio en "+$F{domicilioTrabajador}+", distrito de "+$F{distritoTrabajador}+", provincia de "+$F{provinciaTrabajador}+" y departamento de "+$F{departamentoTrabajador}+", a quien en adelante se denominará el “Trabajador”; en los términos y condiciones siguientes:"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="115" width="220" height="22" uuid="f1f3c15a-6def-4bec-831d-3655f143c5ae"/>
+				<reportElement x="10" y="166" width="220" height="22" uuid="f1f3c15a-6def-4bec-831d-3655f143c5ae"/>
 				<textElement>
 					<font isBold="true" isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CLAUSULA PRIMERA"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="137" width="510" height="30" uuid="2d8aa302-cdb2-4757-9262-099991a9b9d0"/>
+				<reportElement x="30" y="188" width="510" height="30" uuid="2d8aa302-cdb2-4757-9262-099991a9b9d0"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El Empleador es una sociedad constituida con arreglo a las leyes peruanas dedicada a [XXXXXXX] y que requiere contratar a una persona para que se desempeñe en [XXXXXXX]."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["El Empleador es una sociedad constituida con arreglo a las leyes peruanas dedicada a "+$F{rubro}+" y que requiere contratar a una persona para que se desempeñe en "+$F{desempeño}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="176" width="120" height="22" uuid="dd62177b-c4e1-4820-8254-7a9ef1862189"/>
+				<reportElement x="10" y="227" width="120" height="22" uuid="dd62177b-c4e1-4820-8254-7a9ef1862189"/>
 				<textElement>
 					<font isBold="true" isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CLAUSULA SEGUNDA"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="198" width="510" height="30" uuid="7feb0e6e-5d62-4699-9e62-a02157fdf4e2"/>
+				<reportElement x="30" y="249" width="510" height="30" uuid="7feb0e6e-5d62-4699-9e62-a02157fdf4e2"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El Trabajador declara tener experiencia en [XXXXXXX] y estar apto para prestar servicios en dicha actividad, de acuerdo con las directrices que disponga el Empleador."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["El Trabajador declara tener experiencia en "+$F{cargo}+" y estar apto para prestar servicios en dicha actividad, de acuerdo con las directrices que disponga el Empleador."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="239" width="120" height="22" uuid="b0a39f80-fc4c-4e48-83ce-76c30c68cf73"/>
+				<reportElement x="10" y="290" width="120" height="22" uuid="b0a39f80-fc4c-4e48-83ce-76c30c68cf73"/>
 				<textElement markup="styled">
 					<font isBold="true" isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CLAUSULA TERCERA"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="261" width="510" height="68" uuid="dbe86349-a93c-41b6-96bf-a66dbf79295a"/>
+				<reportElement x="30" y="312" width="510" height="68" uuid="dbe86349-a93c-41b6-96bf-a66dbf79295a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["En virtud del presente contrato, el Empleador contrata los servicios personales del Trabajador, para que ocupe el cargo de [XXXXXXX] en la actividad de [XXXXXXX] u otras que el Empleador disponga a lo largo del vínculo laboral, bajo el régimen laboral general de la actividad privada y a cambio de la remuneración convenida en la cláusula novena."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["En virtud del presente contrato, el Empleador contrata los servicios personales del Trabajador, para que ocupe el cargo de "+$F{cargo}+" en la actividad de "+$F{actividad}+" u otras que el Empleador disponga a lo largo del vínculo laboral, bajo el régimen laboral general de la actividad privada y a cambio de la remuneración convenida en la cláusula novena."]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Transparent" x="10" y="137" width="13" height="20" uuid="a1d0ed3a-bbde-47a1-8041-a3d5f745a6d7"/>
+				<reportElement mode="Transparent" x="10" y="188" width="13" height="20" uuid="a1d0ed3a-bbde-47a1-8041-a3d5f745a6d7"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5" isBold="false"/>
 				</textElement>
 				<text><![CDATA[1.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="198" width="13" height="20" uuid="e956967c-daa9-4fcc-affa-3c069673205c"/>
+				<reportElement x="10" y="249" width="13" height="20" uuid="e956967c-daa9-4fcc-affa-3c069673205c"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5" isBold="false"/>
 				</textElement>
 				<text><![CDATA[2.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="261" width="13" height="20" uuid="e045ff3f-6049-4892-a696-896ab06262aa"/>
+				<reportElement x="10" y="312" width="13" height="20" uuid="e045ff3f-6049-4892-a696-896ab06262aa"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5" isBold="false"/>
 				</textElement>
 				<text><![CDATA[3.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="30" y="340" width="510" height="51" uuid="2e54709d-e585-400f-99da-cac0b983a0b5"/>
+				<reportElement x="30" y="391" width="510" height="51" uuid="2e54709d-e585-400f-99da-cac0b983a0b5"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Las labores que desempeñará el Trabajador serán exclusivas para el Empleador y comprenden todas aquellas actividades relacionadas con el giro de su negocio. En ese sentido, sin que el detalle que a continuación se menciona tenga carácter taxativo sino únicamente enunciativo, las labores asignadas al Trabajador comprenderán, entre otras, las siguientes:"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="318" width="120" height="22" uuid="62d3d8a5-95ab-410c-b8b3-8ee4b9e9446b"/>
+				<reportElement x="10" y="369" width="120" height="22" uuid="62d3d8a5-95ab-410c-b8b3-8ee4b9e9446b"/>
 				<textElement>
 					<font isBold="true" isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CLAUSULA CUARTA"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="10" y="340" width="13" height="20" uuid="6a932fa8-7c16-4e18-8473-c29f8329ae70"/>
+				<reportElement x="10" y="391" width="13" height="20" uuid="6a932fa8-7c16-4e18-8473-c29f8329ae70"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5" isBold="false"/>
 				</textElement>
 				<text><![CDATA[4.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="53" y="396" width="490" height="19" uuid="ba9bd35e-0c4c-4a1d-b57c-fa3a12544d4e"/>
-				<textFieldExpression><![CDATA["[XXXXXXX]"]]></textFieldExpression>
+				<reportElement x="53" y="447" width="490" height="19" uuid="ba9bd35e-0c4c-4a1d-b57c-fa3a12544d4e"/>
+				<textFieldExpression><![CDATA[$F{laboresAsignadas}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="53" y="408" width="487" height="19" uuid="1b08541f-aa5b-4918-a496-2605f36ee8fa"/>
-				<textFieldExpression><![CDATA["[XXXXXXX]"]]></textFieldExpression>
+				<reportElement x="53" y="459" width="487" height="19" uuid="1b08541f-aa5b-4918-a496-2605f36ee8fa"/>
+				<textFieldExpression><![CDATA[$F{laboresAsignadas2}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="53" y="420" width="510" height="35" uuid="15c40cf9-0e94-42cb-b8b1-578859acec2d"/>
+				<reportElement x="53" y="471" width="492" height="35" uuid="15c40cf9-0e94-42cb-b8b1-578859acec2d"/>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA["Cumplir con todas las demás funciones que se le encomienden y que fueren necesarias para la empresa por la propia naturaleza de su puesto."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="396" width="20" height="20" uuid="d173ac4f-011a-4c9b-8033-e66db2d03f1d"/>
+				<reportElement x="30" y="447" width="20" height="20" uuid="d173ac4f-011a-4c9b-8033-e66db2d03f1d"/>
 				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="408" width="20" height="20" uuid="5d0aeb58-0773-4686-887b-1d63affd071c"/>
+				<reportElement x="30" y="459" width="20" height="20" uuid="5d0aeb58-0773-4686-887b-1d63affd071c"/>
 				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="420" width="20" height="20" uuid="3bd2cb9f-404a-457e-a052-432e9b0d6e1a"/>
+				<reportElement x="30" y="471" width="20" height="20" uuid="3bd2cb9f-404a-457e-a052-432e9b0d6e1a"/>
 				<textFieldExpression><![CDATA["c)"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="454" width="111" height="22" uuid="dec12da6-190f-4065-8666-1e3180c58589"/>
+				<reportElement x="10" y="505" width="111" height="22" uuid="dec12da6-190f-4065-8666-1e3180c58589"/>
 				<textElement markup="styled">
 					<font isBold="true" isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CLAUSULA QUINTA"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="115" y="454" width="170" height="22" uuid="3c9be244-bae2-4862-9e11-a828c638ba79"/>
+				<reportElement x="115" y="505" width="170" height="22" uuid="3c9be244-bae2-4862-9e11-a828c638ba79"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[": PRESTACION DE SERVICIOS"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="11" y="474" width="19" height="20" uuid="8336b745-9d9f-4eca-8d03-e81f95cba45d"/>
+				<reportElement x="11" y="525" width="19" height="20" uuid="8336b745-9d9f-4eca-8d03-e81f95cba45d"/>
 				<textFieldExpression><![CDATA["5.1."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="475" width="510" height="51" uuid="4b41c0f1-855b-4a92-b3ef-97451ee32e29"/>
+				<reportElement x="30" y="526" width="510" height="51" uuid="4b41c0f1-855b-4a92-b3ef-97451ee32e29"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Las partes acuerdan que los servicios del Trabajador serán prestados en los lugares que el Empleador determine. Las partes reconocen que el presente contrato no implica pacto de labor fija, ni de ubicación geográfica, de tal manera que el Empleador podrá asignar o reasignar funciones y/o cargos de manera razonable, en función a la capacidad y aptitud del Trabajador y a las necesidades y requerimientos del Empleador, sin que dichas variaciones signifiquen rebaja de categoría y/o remuneración. Asimismo, el Empleador podrá destacar al Trabajador a cualquier otro lugar dentro o fuera de la República del Perú para el desempeño de las labores que se le asignen, de ser el caso."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="118" y="111" width="110" height="22" uuid="8d491d36-c914-4501-af2c-0c9422d5b5e4"/>
+				<reportElement x="121" y="166" width="110" height="22" uuid="8d491d36-c914-4501-af2c-0c9422d5b5e4"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[": EL EMPLEADOR"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="122" y="176" width="111" height="22" uuid="96ae7880-ef13-4672-aa72-381edbff034a"/>
+				<reportElement x="122" y="227" width="111" height="22" uuid="96ae7880-ef13-4672-aa72-381edbff034a"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[": EL TRABAJADOR"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="121" y="239" width="170" height="22" uuid="5abdc3a6-1cd0-4ef1-b45f-e848d5adfb15"/>
+				<reportElement x="121" y="290" width="170" height="22" uuid="5abdc3a6-1cd0-4ef1-b45f-e848d5adfb15"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[": OBJETO DEL CONTRATO"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="118" y="318" width="176" height="22" uuid="e797f3ad-e9e1-4c52-a999-43181e2f383f"/>
+				<reportElement x="118" y="369" width="176" height="22" uuid="e797f3ad-e9e1-4c52-a999-43181e2f383f"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[": DESCRIPCION DE FUNCIONES"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="532" width="510" height="30" uuid="e4d10ca3-0651-49ca-9d16-203953ba42c7"/>
+				<reportElement x="30" y="583" width="510" height="30" uuid="e4d10ca3-0651-49ca-9d16-203953ba42c7"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Las partes confirman que el Empleador goza de las facultades para organizar, controlar el buen cumplimiento de las obligaciones del Trabajador y, si fuera el caso, de modificar la prestación de"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="11" y="531" width="19" height="20" uuid="374f9fd0-c453-49ed-9b28-f411ed25e22a"/>
+				<reportElement x="11" y="582" width="19" height="20" uuid="374f9fd0-c453-49ed-9b28-f411ed25e22a"/>
 				<textFieldExpression><![CDATA["5.2."]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="25" splitType="Stretch">
-			<textField>
-				<reportElement x="440" y="-8" width="100" height="20" uuid="7fa6c998-e0c8-4a65-9a44-8ec3f1c25283"/>
-				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="39" splitType="Stretch"/>
 	</pageFooter>
 </jasperReport>
