@@ -1,12 +1,10 @@
 package com.example.demo.service.impl;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.net.URL;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.jasper.ContratoRequestJasper;
@@ -30,17 +28,14 @@ public class JasperServiceImpl implements JasperService {
 		log.info("JasperServiceImpl.pdfContrato1");
 		JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(list, false);
 		try {
-			 URL url = this.getClass()
-				        .getClassLoader()
-				        .getResource("Hoja1.jrxml");
-			 log.info("URL {}", url.getFile());
+
 			JasperReport compileReport = JasperCompileManager
-					.compileReport(url.getFile());
+					.compileReport(new ClassPathResource("Hoja1.jrxml").getInputStream());
 			JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, new HashMap<>(),
 					beanCollectionDataSource);
 			byte data[] = JasperExportManager.exportReportToPdf(jasperPrint);
 			return data;
-		} catch (JRException e) {
+		} catch (IOException | JRException e) {
 			log.info("Error : {}", e);
 		}
 		return null;
