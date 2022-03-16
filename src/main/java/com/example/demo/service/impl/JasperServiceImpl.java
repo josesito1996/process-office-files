@@ -30,7 +30,7 @@ public class JasperServiceImpl implements JasperService {
 		try {
 			JasperReport compileReport = JasperCompileManager
 					.compileReport(new FileInputStream("src/main/resources/Hoja1.jrxml"));
-			JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, new HashMap<String, Object>(),
+			JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, new HashMap<>(),
 					beanCollectionDataSource);
 			byte data[] = JasperExportManager.exportReportToPdf(jasperPrint);
 			return data;

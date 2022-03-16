@@ -40,9 +40,11 @@ public class ContratoController {
 	
 	@PostMapping(path = "/viewPdfBase64")
 	public ResponseEntity<String> pdfContratoBase64(@RequestBody @Valid ContratoFakeRegisterRequest request) {
+		HttpHeaders headers = new HttpHeaders();
 		
 		String encoded = Base64.getEncoder().encodeToString(jasperService.pdfContrato1(Arrays.asList(transform(request))));
 		return ResponseEntity.ok()
+				.headers(headers).contentType(MediaType.APPLICATION_JSON)
 				.body("data:application/pdf;base64,".concat(encoded));
 	};
 
