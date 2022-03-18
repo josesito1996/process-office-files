@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja6" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="574c7966-9b32-4286-a98d-0c2c20a0a612">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="684" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="63" width="178" height="22" uuid="36a590cb-af7b-4164-91dd-cfcb3d705123"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO OCTAVA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="63" width="198" height="22" uuid="23cb9d14-1c1e-4653-9d84-1a544265307b"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": JURISDICCIÓN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="84" width="27" height="20" uuid="3d06c029-d674-4c0d-8a7a-084862f81b31"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["18."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="85" width="470" height="64" uuid="3ab8be08-62cb-4276-966e-acf4d1668be5"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las partes acuerdan que cualquier controversia, diferencia, problema de interpretación, duda o dificultad que se produzca entre ellas surgida o derivada de la relación jurídica creada por este contrato de trabajo o en la ejecución del mismo, o por cualquier otro motivo o circunstancia relacionada directa o indirectamente con él o con los que por causa del presente contrato se celebren, se solucionará siguiendo el procedimiento siguiente:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="27" width="27" height="20" uuid="3bb40d2a-ca44-42f0-8a5a-11c625b53346"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["17.3."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="28" width="470" height="32" uuid="bb0d2cd0-274d-4936-a75a-beaa9dde6832"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Al término de la relación laboral, el Trabajador deberá devolver al Empleador cualquier información que posea, relativa al trabajo desarrollado."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="370" width="470" height="40" uuid="32297fc0-cb7e-4014-8e76-a1be54ef56fc"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En señal de conformidad las partes suscriben este documento, en dos (2) ejemplares de un mismo tenor, en la ciudad de Lima, a los [XXXXXXX] días del mes de [XXXXXXX] de [XXXXXXX], entregándose uno a cada parte."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="485" width="75" height="16" uuid="8a07dc30-4e57-4916-8232-ccdcfe6eb7de"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Empleador"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="0" width="447" height="20" uuid="91b7edd4-b769-4b08-b2b9-9016dc5941f6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["No es el resultado de ningún trabajo desempeñado para el Empleador."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="0" width="20" height="20" uuid="f7437cd3-52c0-4f80-9aac-571f4eb2257a"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["d)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="160" width="20" height="20" uuid="270f94bf-89b1-4a88-a359-337b6b93eb78"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="160" width="447" height="30" uuid="09a3cdff-4f9a-42c5-ab86-d9c078ec91b2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["En primer lugar, las partes pondrán sus mayores esfuerzos para encontrar directamente una solución amigable."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="193" width="20" height="20" uuid="fdfb18d7-0c41-4e74-a0ab-fead29249125"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="193" width="447" height="67" uuid="65561dbe-0310-4934-b2f2-5544718b68fe"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["En caso de que no se haya logrado acuerdo o éste haya sido parcial, es decir, para los asuntos que no hayan podido ser materia de acuerdo, las partes convienen que cualquier desavenencia, controversia o reclamación que pudiera derivarse de este contrato y de cualquier otra relación entre las partes, incluidas su nulidad o invalidez, serán resueltas en la vía judicial, sometiéndose ambas partes a la Corte Superior de Justicia de Lima."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="270" width="178" height="22" uuid="c3ed0170-b14c-4340-8be4-23152e5edb5d"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO NOVENA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="270" width="198" height="22" uuid="1e63207a-0dc4-4f70-a7c8-cd2b6209a81e"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": DOMICILIO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="292" width="470" height="68" uuid="b8aa1cde-9715-4e8e-9b34-dbce8343f95f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las partes señalan como sus respectivos domicilios los especificados en la introducción del presente documento, por lo que se reputarán válidas todas las comunicaciones y notificaciones dirigidas a las mismas con motivo de la ejecución del presente contrato. El cambio de domicilio de cualquiera de las partes surtirá efecto desde la fecha de comunicación de dicho cambio a la contraparte, por cualquier medio escrito."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="291" width="27" height="20" uuid="5e06130a-d9b3-449c-84bd-6fde1c825996"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["19."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="485" width="75" height="16" uuid="129b4573-11f9-4c56-b376-ce5968f1957b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Empleador"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>

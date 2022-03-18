@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja5" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="2b6f26a7-b79a-4057-ad95-af3d42154545">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="690" splitType="Stretch">
+			<textField>
+				<reportElement x="-2" y="308" width="178" height="22" uuid="4df49946-5ee3-4e09-8636-53b740ce83a0"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO SEXTA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="308" width="198" height="22" uuid="14a30a1c-aa95-4382-aea4-3a3c77ccb060"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": RÉGIMEN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-2" y="329" width="27" height="20" uuid="71b424e5-719c-4478-a134-21859c273936"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["16.1."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="330" width="470" height="40" uuid="303d65e0-2f29-46e5-9871-5770bbcb4832"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador se encuentra sujeto al Régimen Laboral de la Actividad Privada conforme a lo previsto por la LPCL, o norma que la sustituya, sus normas reglamentarias y conexas, y en general, a lo dispuesto por la legislación laboral vigente."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="574" width="28" height="20" uuid="6c8251bd-45ba-4112-80a4-8c9c9c5605e0"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["17.2."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="575" width="469" height="35" uuid="3e18dc47-0c65-402a-b12f-a02c3438e9da"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las obligaciones pactadas en la presente cláusula no se aplicarán a ninguna Creación del Trabajador respecto de la cual se pueda probar copulativamente que:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="448" width="230" height="22" uuid="e4d78e55-ae73-421f-8a6f-2759f08bbd78"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": PROPIEDAD INTELECTUAL"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="470" width="470" height="103" uuid="2f0a7b03-02f4-49f9-843c-77c15ece727d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sin perjuicio de las directivas que sobre el particular emita el Empleador, el Trabajador acuerda que toda la información, trabajo, investigación o escrito obtenido, incluyendo softwares, diagramas y otros, originados o generados por el Trabajador durante su relación laboral (en conjunto denominadas “Creación”), es de propiedad exclusiva del Empleador, inclusive los borradores y trabajos preliminares de éstos. Por el presente contrato, el Trabajador cede al Empleador cualquier derecho de propiedad intelectual que pudiera tener sobre la Creación. El Trabajador no tendrá derecho a indemnización, pago adicional o pago alguno por dicho concepto, ya que se entiende debidamente remunerado con su salario."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-2" y="448" width="178" height="22" uuid="53ed1224-bbdf-4e81-b0cf-7e129013cf7d"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO SÉPTIMA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="469" width="27" height="20" uuid="bc2c1c04-65a1-4c69-bdc7-0e98bc8ad3d1"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["17.1."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="230" height="22" uuid="fdbc174f-ba3c-4b76-84a6-0d86b2fcc88d"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": DATOS PERSONALES"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="178" height="22" uuid="e5ce0ae5-7ac5-48f3-9788-3039b9c6d9d6"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO  QUINTA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="23" width="27" height="20" uuid="c3b1578a-d2f8-46a2-86f5-94a2683544a3"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["15.1."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="24" width="470" height="54" uuid="f8847c33-4657-4ccf-8230-9ad007d3af29"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En virtud del presente documento, el Trabajador autoriza expresamente al Empleador a recolectar, procesar y transferir sus datos personales no sensibles y relacionados a la prestación de sus labores, a las empresas vinculadas directamente al Empleador, entre ellas la empresa matriz, sus subsidiarias y afiliadas, en caso existan."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="81" width="27" height="20" uuid="6216271f-bded-4706-bc57-679b344835da"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["15.2."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="82" width="470" height="54" uuid="0c6cc6b9-5392-4de1-98cc-e67d541ea371"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Empleador se compromete a utilizar la referida información con el propósito de cumplir con sus obligaciones laborales, mantener y mejorar la administración del Empleador, facilitar el control de gastos y presupuestos, controlar las asignaciones de trabajo, entrenamiento, mantener y mejorar sistemas de seguridad, dar cumplimiento a sus políticas corporativas y, en general, para ejercer los derechos del Empleador y cumplir con los derechos del Trabajador."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="140" width="27" height="20" uuid="1618686a-fb5f-43cc-b1ed-18fc04f004a7"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["15.3."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="141" width="470" height="69" uuid="b8fd8291-dae4-43d8-8105-e0ccf972a813"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Empleador declara que el tratamiento de tales datos personales se hace con pleno respeto de los derechos fundamentales del Trabajador y con el consentimiento expreso manifestado a través de la presente cláusula. El Empleador garantiza que adoptará las medidas que resulten necesarias para proteger los datos personales del Trabajador, de conformidad con lo dispuesto en la Ley N° 29733, Ley de Protección de Datos Personales."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="210" width="27" height="20" uuid="2a4de48e-d345-4c99-bb03-53f9b3bddfbf"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["15.4."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="211" width="470" height="29" uuid="aa9692e1-cbee-42db-b44a-6f6bd53e9607"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador podrá ejercer su derecho de acceso, rectificación, cancelación y oposición mediante escrito dirigido al Empleador. "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="246" width="470" height="50" uuid="e97abf00-4413-43bc-a905-4f8cdf55ce67"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador reconoce y declara expresamente que, de manera previa a la firma del presente contrato, ha sido debida y suficientemente informado sobre los alcances y efectos de la presente cláusula, según lo establecido en el artículo 18° de Ley N° 29733, Ley de Protección de Datos Personales. "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="245" width="27" height="20" uuid="d85369b0-e7d6-4196-98bc-f8d4f8740755"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["15.5."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-2" y="376" width="27" height="20" uuid="db080c42-5846-472f-b1dc-e07ba27e82e9"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["16.2."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="377" width="470" height="30" uuid="48f9f31e-689a-42a2-84e9-9202db91c198"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las partes reconocen que el Empleador puede emitir las directivas y pautas que correspondan para la aplicación e interpretación de lo expuesto en este contrato."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="413" width="470" height="30" uuid="bc4dbf49-ad3c-45f7-98d7-fb972206701e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las partes reconocen que el Empleador puede emitir las directivas y pautas que correspondan para la aplicación e interpretación de lo expuesto en este contrato."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-2" y="412" width="27" height="20" uuid="5ff1144f-4c27-4cf7-81da-bfc022a4f695"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["16.3."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="610" width="20" height="20" uuid="4dd7c041-ca17-4558-99b0-71724f059c03"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="610" width="447" height="19" uuid="cbaabdd9-6a91-4a32-8ee4-e93a5bf5b641"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Fue desarrollada completamente en su tiempo libre;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="623" width="20" height="20" uuid="9632c0cf-b6e7-44f1-90fb-31091219d6ef"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="623" width="447" height="30" uuid="32e5abe7-5eb7-4929-936f-1dd401fdad4e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["No utilizó en su desarrollo ningún equipo, instalación, suministro, servicio o información del Empleador;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="649" width="20" height="20" uuid="7c22c0a9-b5cd-4c96-ba99-306e1224ef4c"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["c)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="649" width="447" height="30" uuid="1c86c853-d097-4170-bf48-0e5e0336b81b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["No se relaciona (i) de forma directa o indirecta con los negocios del Empleador; o, (ii) con las investigaciones y desarrollos anticipados, reales o demostrables del Empleador; y,"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>
