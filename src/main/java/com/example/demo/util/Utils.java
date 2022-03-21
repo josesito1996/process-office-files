@@ -10,7 +10,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Base64;
+import java.util.Date;
+import java.util.TimeZone;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -69,5 +74,28 @@ public class Utils {
 
 	public static String fileNameNoExtension(String fileName) {
 		return fileName.substring(0, fileName.indexOf("."));
+	}
+
+	/**
+	 * Parametros para formato de fecha : Dia : "dd" Mes : "MMMM" Anio : yyyy
+	 * 
+	 * @param zoneTime
+	 * @param fechaActual
+	 * @return
+	 */
+	public static String dateZone(String zoneTime, LocalDateTime fechaActual, String paramDate) {
+		TimeZone timeZone = TimeZone.getTimeZone(zoneTime);
+		Date fecha = convertToDateViaInstant(fechaActual);
+		return fecha.toInstant().atZone(timeZone.toZoneId()).toLocalDateTime()
+				.format(DateTimeFormatter.ofPattern(paramDate));
+	}
+
+	private static Date convertToDateViaInstant(LocalDateTime dateToConvert) {
+		return java.util.Date.from(dateToConvert.atZone(ZoneId.systemDefault()).toInstant());
+	}
+
+	public static void main(String... args) {
+
+		System.out.println(dateZone("America/lima", LocalDateTime.now(),"MMMM"));
 	}
 }

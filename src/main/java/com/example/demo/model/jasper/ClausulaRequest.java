@@ -31,7 +31,7 @@ public class ClausulaRequest implements Serializable {
 	
 	@NotNull
 	@NotEmpty
-	private String desempeño;
+	private String desempenio;
 	
 	@NotNull
 	@NotEmpty

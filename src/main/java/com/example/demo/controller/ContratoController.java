@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Base64;
 
@@ -21,6 +22,7 @@ import com.example.demo.model.jasper.ContratoRequestJasper;
 import com.example.demo.model.jasper.DatosEmpleadorRequest;
 import com.example.demo.model.jasper.DatosTrabajadorRequest;
 import com.example.demo.service.JasperService;
+import com.example.demo.util.Utils;
 
 @RestController
 @RequestMapping("/api-contrato")
@@ -45,6 +47,8 @@ public class ContratoController {
 	};
 
 	private ContratoRequestJasper transform(ContratoFakeRegisterRequest request) {
+		String zone = "America/Lima";
+		LocalDateTime fechaActual = LocalDateTime.now();
 		ContratoDatosPrincipalesRequest datosPrincipales = request.getDatosPrincipales();
 		ClausulaRequest clausula = request.getClausulas();
 		DatosEmpleadorRequest datosEmpleador = datosPrincipales.getDatosEmpleador();
@@ -73,7 +77,7 @@ public class ContratoController {
 				.provinciaTrabajador(datoTrabajador.getProvinciaTrabajador())
 				.distritoTrabajador(datoTrabajador.getDistritoTrabajador())
 				.rubro(clausula.getRubro())
-				.desempeño(clausula.getDesempeño())
+				.desempenio(clausula.getDesempenio())
 				.experiencia(clausula.getExperiencia())
 				.cargo(clausula.getCargo())
 				.actividad(clausula.getActividad())
@@ -86,6 +90,9 @@ public class ContratoController {
 				.sueldo(clausula.getSueldo())
 				.moneda(clausula.getMoneda())
 				.laboresAsignadas2(clausula.getLaboresAsignadas2())
+				.dia(Utils.dateZone(zone, fechaActual, "dd"))
+				.mes(Utils.dateZone(zone, fechaActual, "MMMM"))
+				.anio(Utils.dateZone(zone, fechaActual, "yyyy"))
 				.build();
 	}
 

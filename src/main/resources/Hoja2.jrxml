@@ -5,8 +5,8 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="desempeño" class="java.lang.String">
-		<fieldDescription><![CDATA[desempeño]]></fieldDescription>
+	<field name="desempenio" class="java.lang.String">
+		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
 	</field>
 	<field name="rubro" class="java.lang.String">
 		<fieldDescription><![CDATA[rubro]]></fieldDescription>

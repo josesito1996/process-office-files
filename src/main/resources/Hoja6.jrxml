@@ -1,9 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja6" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="574c7966-9b32-4286-a98d-0c2c20a0a612">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\java-lib-data.xml"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="desempenio" class="java.lang.String">
+		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
+	</field>
+	<field name="rubro" class="java.lang.String">
+		<fieldDescription><![CDATA[rubro]]></fieldDescription>
+	</field>
+	<field name="ruc" class="java.lang.String">
+		<fieldDescription><![CDATA[ruc]]></fieldDescription>
+	</field>
+	<field name="esIndefinido" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[esIndefinido]]></fieldDescription>
+	</field>
+	<field name="laboresAsignadas2" class="java.lang.String">
+		<fieldDescription><![CDATA[laboresAsignadas2]]></fieldDescription>
+	</field>
+	<field name="fechaHasta" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaHasta]]></fieldDescription>
+	</field>
+	<field name="domicilioEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilioEmpleador]]></fieldDescription>
+	</field>
+	<field name="sueldo" class="java.lang.Double">
+		<fieldDescription><![CDATA[sueldo]]></fieldDescription>
+	</field>
+	<field name="distritoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[distritoEmpleador]]></fieldDescription>
+	</field>
+	<field name="actividad" class="java.lang.String">
+		<fieldDescription><![CDATA[actividad]]></fieldDescription>
+	</field>
+	<field name="razonSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[razonSocial]]></fieldDescription>
+	</field>
+	<field name="distritoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[distritoTrabajador]]></fieldDescription>
+	</field>
+	<field name="fechaInicio" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaInicio]]></fieldDescription>
+	</field>
+	<field name="experiencia" class="java.lang.String">
+		<fieldDescription><![CDATA[experiencia]]></fieldDescription>
+	</field>
+	<field name="nombreRepresentante" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreRepresentante]]></fieldDescription>
+	</field>
+	<field name="laboresAsignadas" class="java.lang.String">
+		<fieldDescription><![CDATA[laboresAsignadas]]></fieldDescription>
+	</field>
+	<field name="moneda" class="java.lang.String">
+		<fieldDescription><![CDATA[moneda]]></fieldDescription>
+	</field>
+	<field name="tipoContrato" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoContrato]]></fieldDescription>
+	</field>
+	<field name="idTemplate" class="java.lang.String">
+		<fieldDescription><![CDATA[idTemplate]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.String">
+		<fieldDescription><![CDATA[mes]]></fieldDescription>
+	</field>
+	<field name="tipoDocumentoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoDocumentoEmpleador]]></fieldDescription>
+	</field>
+	<field name="cargo" class="java.lang.String">
+		<fieldDescription><![CDATA[cargo]]></fieldDescription>
+	</field>
+	<field name="nacionalidadTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[nacionalidadTrabajador]]></fieldDescription>
+	</field>
+	<field name="provinciaEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[provinciaEmpleador]]></fieldDescription>
+	</field>
+	<field name="nroDocumentoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[nroDocumentoTrabajador]]></fieldDescription>
+	</field>
+	<field name="areaLaboral" class="java.lang.String">
+		<fieldDescription><![CDATA[areaLaboral]]></fieldDescription>
+	</field>
+	<field name="departamentoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[departamentoTrabajador]]></fieldDescription>
+	</field>
+	<field name="provinciaTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[provinciaTrabajador]]></fieldDescription>
+	</field>
+	<field name="departamentoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[departamentoEmpleador]]></fieldDescription>
+	</field>
+	<field name="nombresTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[nombresTrabajador]]></fieldDescription>
+	</field>
+	<field name="domicilioTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilioTrabajador]]></fieldDescription>
+	</field>
+	<field name="tipoDocumentoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoDocumentoTrabajador]]></fieldDescription>
+	</field>
+	<field name="nroPartida" class="java.lang.String">
+		<fieldDescription><![CDATA[nroPartida]]></fieldDescription>
+	</field>
+	<field name="apellidosTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[apellidosTrabajador]]></fieldDescription>
+	</field>
+	<field name="nroDocumentoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[nroDocumentoEmpleador]]></fieldDescription>
+	</field>
+	<field name="oficinaRegistral" class="java.lang.String">
+		<fieldDescription><![CDATA[oficinaRegistral]]></fieldDescription>
+	</field>
+	<field name="dia" class="java.lang.String">
+		<fieldDescription><![CDATA[dia]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[anio]]></fieldDescription>
+	</field>
+	<field name="apellidoRepresentante" class="java.lang.String">
+		<fieldDescription><![CDATA[apellidoRepresentante]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -67,7 +185,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["En señal de conformidad las partes suscriben este documento, en dos (2) ejemplares de un mismo tenor, en la ciudad de Lima, a los [XXXXXXX] días del mes de [XXXXXXX] de [XXXXXXX], entregándose uno a cada parte."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["En señal de conformidad las partes suscriben este documento, en dos (2) ejemplares de un mismo tenor, en la ciudad de Lima, a los "+$F{dia}+" días del mes de "+$F{mes}+" de "+$F{anio}+", entregándose uno a cada parte."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="119" y="485" width="75" height="16" uuid="8a07dc30-4e57-4916-8232-ccdcfe6eb7de"/>
