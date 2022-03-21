@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3aa4ce30-d967-4610-bce1-a4d135a268e3">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\Java-Adapter.xml"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="515"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="471"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\javaAdapter.xml"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="desempenio" class="java.lang.String">
-		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
-	</field>
 	<field name="rubro" class="java.lang.String">
 		<fieldDescription><![CDATA[rubro]]></fieldDescription>
 	</field>
@@ -21,6 +18,9 @@
 	</field>
 	<field name="laboresAsignadas2" class="java.lang.String">
 		<fieldDescription><![CDATA[laboresAsignadas2]]></fieldDescription>
+	</field>
+	<field name="desempenio" class="java.lang.String">
+		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
 	</field>
 	<field name="fechaHasta" class="java.lang.String">
 		<fieldDescription><![CDATA[fechaHasta]]></fieldDescription>
@@ -63,6 +63,9 @@
 	</field>
 	<field name="idTemplate" class="java.lang.String">
 		<fieldDescription><![CDATA[idTemplate]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.String">
+		<fieldDescription><![CDATA[mes]]></fieldDescription>
 	</field>
 	<field name="tipoDocumentoEmpleador" class="java.lang.String">
 		<fieldDescription><![CDATA[tipoDocumentoEmpleador]]></fieldDescription>
@@ -111,6 +114,12 @@
 	</field>
 	<field name="oficinaRegistral" class="java.lang.String">
 		<fieldDescription><![CDATA[oficinaRegistral]]></fieldDescription>
+	</field>
+	<field name="dia" class="java.lang.String">
+		<fieldDescription><![CDATA[dia]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[anio]]></fieldDescription>
 	</field>
 	<field name="apellidoRepresentante" class="java.lang.String">
 		<fieldDescription><![CDATA[apellidoRepresentante]]></fieldDescription>

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja6" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="574c7966-9b32-4286-a98d-0c2c20a0a612">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\java-lib-data.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\javaAdapter.xml"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="desempenio" class="java.lang.String">
-		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
-	</field>
 	<field name="rubro" class="java.lang.String">
 		<fieldDescription><![CDATA[rubro]]></fieldDescription>
 	</field>
@@ -19,6 +16,9 @@
 	</field>
 	<field name="laboresAsignadas2" class="java.lang.String">
 		<fieldDescription><![CDATA[laboresAsignadas2]]></fieldDescription>
+	</field>
+	<field name="desempenio" class="java.lang.String">
+		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
 	</field>
 	<field name="fechaHasta" class="java.lang.String">
 		<fieldDescription><![CDATA[fechaHasta]]></fieldDescription>

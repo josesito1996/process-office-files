@@ -3,7 +3,6 @@ package com.example.demo.model.jasper;
 import static com.example.demo.util.Utils.dateZone;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -109,13 +108,14 @@ public class ContratoRequestJasper implements Serializable {
 	private String anio;
 
 	public static List<ContratoRequestJasper> build() {
-		String json = "{\"idTemplate\":\"323232323\",\"razonSocial\":\"SUN INVERSIONES S.A.C\",\"nroPartida\":\"00.15\",\"oficinaRegistral\":\"OFICINA LIMA\",\"ruc\":\"20486229684\",\"domicilioEmpleador\":\"AV. NICOLAS DE PIEROLA NRO. 392 INT. 2DO CERCADO DE LIMA\",\"departamentoEmpleador\":\"Lima\",\"provinciaEmpleador\":\"Lima\",\"distritoEmpleador\":\"Breña\",\"nombreRepresentante\":\"WILMAN\",\"apellidoRepresentante\":\"SALVADOR URIOL\",\"tipoDocumentoEmpleador\":\"DNI\",\"nroDocumentoEmpleador\":\"05876985\",\"nombresTrabajador\":\"JOSE\",\"apellidosTrabajador\":\"CASTILLO CHALQUE\",\"nacionalidadTrabajador\":\"PERUANA\",\"tipoDocumentoTrabajador\":\"DNI\",\"nroDocumentoTrabajador\":\"75624412\",\"domicilioTrabajador\":\"JR RIO JORDAN MZ LOTE 1 MONTE DE SION\",\"departamentoTrabajador\":\"Lima\",\"provinciaTrabajador\":\"Lima\",\"distritoTrabajador\":\"San Juan de Lurigancho\",\"rubro\":\"Entretenimiento\",\"desempeño\":\"Desarrollador Jr.\",\"experiencia\":\"3 años\",\"cargo\":\"Soporte de Sistemas\",\"actividad\":\"Sistemas\",\"laboresAsignadas\":\"Dar soporte al area de oficina y sala\",\"areaLaboral\":\"Sistemas\",\"tipoContrato\":\"Indefinido\",\"fechaInicio\":\"2020-05-01\",\"fechaHasta\":\"2020-08-01\",\"esIndefinido\":true,\"sueldo\":2300,\"moneda\":\"S\",\"laboresAsignadas2\":\"Otras labores asignadas u.u\"}";
+		String json = "{\"idTemplate\":\"323232323\",\"razonSocial\":\"SUN INVERSIONES S.A.C\",\"nroPartida\":\"00.15\",\"oficinaRegistral\":\"OFICINA LIMA\",\"ruc\":\"20486229684\",\"domicilioEmpleador\":\"AV. NICOLAS DE PIEROLA NRO. 392 INT. 2DO CERCADO DE LIMA\",\"departamentoEmpleador\":\"Lima\",\"provinciaEmpleador\":\"Lima\",\"distritoEmpleador\":\"Breña\",\"nombreRepresentante\":\"WILMAN\",\"apellidoRepresentante\":\"SALVADOR URIOL\",\"tipoDocumentoEmpleador\":\"DNI\",\"nroDocumentoEmpleador\":\"05876985\",\"nombresTrabajador\":\"JOSE\",\"apellidosTrabajador\":\"CASTILLO CHALQUE\",\"nacionalidadTrabajador\":\"PERUANA\",\"tipoDocumentoTrabajador\":\"DNI\",\"nroDocumentoTrabajador\":\"75624412\",\"domicilioTrabajador\":\"JR RIO JORDAN MZ LOTE 1 MONTE DE SION\",\"departamentoTrabajador\":\"Lima\",\"provinciaTrabajador\":\"Lima\",\"distritoTrabajador\":\"San Juan de Lurigancho\",\"rubro\":\"Entretenimiento\",\"desempenio\":\"Desarrollador Jr.\",\"experiencia\":\"3 años\",\"cargo\":\"Soporte de Sistemas\",\"actividad\":\"Sistemas\",\"laboresAsignadas\":\"Dar soporte al area de oficina y sala\",\"areaLaboral\":\"Sistemas\",\"tipoContrato\":\"Indefinido\",\"fechaInicio\":\"2020-05-01\",\"fechaHasta\":\"2020-08-01\",\"esIndefinido\":true,\"sueldo\":2300,\"moneda\":\"S\",\"laboresAsignadas2\":\"Otras labores asignadas u.u\"}";
 		LocalDateTime fechaActual = LocalDateTime.now();
+		String zone = "America/Lima";
 		@SuppressWarnings("unused")
 		ContratoRequestJasper convertedObject = new Gson().fromJson(json, ContratoRequestJasper.class);
-		convertedObject.setDia(dateZone("America/Lima", fechaActual, "dd"));
-		convertedObject.setMes(dateZone("America/Lima", fechaActual, "MMMM"));
-		convertedObject.setAnio(dateZone("America/Lima", fechaActual, "yyyy"));
+		convertedObject.setDia(dateZone(zone, fechaActual, "dd"));
+		convertedObject.setMes(dateZone(zone, fechaActual, "MMMM"));
+		convertedObject.setAnio(dateZone(zone, fechaActual, "yyyy"));
 		return Arrays.asList(convertedObject);
 	}
 

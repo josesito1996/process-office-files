@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja2" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="f2398bda-9a22-4dd5-ae40-560253bbbb4b">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\JavaAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\javaAdapter.xml"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="desempenio" class="java.lang.String">
-		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
-	</field>
 	<field name="rubro" class="java.lang.String">
 		<fieldDescription><![CDATA[rubro]]></fieldDescription>
 	</field>
@@ -19,6 +16,9 @@
 	</field>
 	<field name="laboresAsignadas2" class="java.lang.String">
 		<fieldDescription><![CDATA[laboresAsignadas2]]></fieldDescription>
+	</field>
+	<field name="desempenio" class="java.lang.String">
+		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
 	</field>
 	<field name="fechaHasta" class="java.lang.String">
 		<fieldDescription><![CDATA[fechaHasta]]></fieldDescription>
@@ -61,6 +61,9 @@
 	</field>
 	<field name="idTemplate" class="java.lang.String">
 		<fieldDescription><![CDATA[idTemplate]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.String">
+		<fieldDescription><![CDATA[mes]]></fieldDescription>
 	</field>
 	<field name="tipoDocumentoEmpleador" class="java.lang.String">
 		<fieldDescription><![CDATA[tipoDocumentoEmpleador]]></fieldDescription>
@@ -110,6 +113,12 @@
 	<field name="oficinaRegistral" class="java.lang.String">
 		<fieldDescription><![CDATA[oficinaRegistral]]></fieldDescription>
 	</field>
+	<field name="dia" class="java.lang.String">
+		<fieldDescription><![CDATA[dia]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[anio]]></fieldDescription>
+	</field>
 	<field name="apellidoRepresentante" class="java.lang.String">
 		<fieldDescription><![CDATA[apellidoRepresentante]]></fieldDescription>
 	</field>
@@ -150,7 +159,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El Trabajador declara expresamente conocer y acepta que el puesto que va a desempeñar conforme al presente contrato es uno de [CONFIANZA/DIRECCIÓN], pues [laborará en contacto directo con el Empleador y/o sus representantes, proporcionando reportes claves y desarrollando funciones de cuya actividad dependerá, en parte, el resultado del negocio] [ejerciendo la representación del Empleador], de conformidad con lo dispuesto por el artículo 43º de la LPCL. Dicha calificación aparecerá reflejada en las planillas y boletas de pago."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["El Trabajador declara expresamente conocer y acepta que el puesto que va a desempeñar conforme al presente contrato es uno de "+$F{tipoContrato}+", pues [laborará en contacto directo con el Empleador y/o sus representantes, proporcionando reportes claves y desarrollando funciones de cuya actividad dependerá, en parte, el resultado del negocio] [ejerciendo la representación del Empleador], de conformidad con lo dispuesto por el artículo 43º de la LPCL. Dicha calificación aparecerá reflejada en las planillas y boletas de pago."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="1" y="190" width="120" height="22" uuid="84b1928a-f733-4d9a-8061-3bd7904acaec"/>
@@ -203,17 +212,23 @@
 			</staticText>
 			<textField>
 				<reportElement x="50" y="462" width="447" height="19" uuid="9a266f8d-4090-42a9-8552-9a651e3985ec"/>
-				<textElement textAlignment="Justified"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Una remuneración mensual bruta ascendente a S/ "+$F{sueldo}+" y 00/100 soles."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="50" y="474" width="447" height="19" uuid="674bf015-d65f-4e93-9715-66d2d43af179"/>
-				<textElement textAlignment="Justified"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Gratificaciones legales y beneficios sociales que correspondan de acuerdo a ley."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="486" width="447" height="20" uuid="6470c7b4-0e6d-4c2e-9a5e-7bee5ec38bb5"/>
-				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<reportElement x="50" y="486" width="447" height="20" forecolor="#FF0400" uuid="6470c7b4-0e6d-4c2e-9a5e-7bee5ec38bb5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA["[XXXXXXX]"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -301,8 +316,10 @@
 				<textFieldExpression><![CDATA["d)"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="499" width="447" height="20" uuid="761c9dae-7288-45df-b7ae-6cf9bb02cc97"/>
-				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<reportElement x="50" y="499" width="447" height="20" forecolor="#FF0400" uuid="761c9dae-7288-45df-b7ae-6cf9bb02cc97"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA["[XXXXXXX]"]]></textFieldExpression>
 			</textField>
 			<textField>
