@@ -1,26 +1,12 @@
 package com.example.demo;
 
-import static com.example.demo.util.Utils.base64ToFile;
-import static com.example.demo.util.Utils.fileNameNoExtension;
-import static com.example.demo.util.Utils.fileToBase64;
-import static com.example.demo.util.Utils.getExtension;
-
-import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.demo.exception.BadRequestException;
-import com.example.demo.lambda.LambdaFileBase64Request;
-import com.example.demo.lambda.LambdaFileRequest;
-import com.example.demo.lambda.LambdaUploadFileRequest;
-import com.example.demo.model.ResourceSami;
 import com.example.demo.service.ImageService;
 import com.example.demo.service.LambdaService;
 import com.example.demo.service.ResourceSamiService;

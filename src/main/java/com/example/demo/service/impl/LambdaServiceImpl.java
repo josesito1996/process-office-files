@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 import com.amazonaws.services.lambda.AWSLambda;
 import com.amazonaws.services.lambda.model.InvokeRequest;
 import com.amazonaws.services.lambda.model.InvokeResult;
+import com.amazonaws.services.lambda.model.ServiceException;
 import com.example.demo.lambda.LambdaFileBase64Request;
 import com.example.demo.lambda.LambdaUploadFileRequest;
+import com.example.demo.model.lambda.LambdaMailRequestSendgrid;
 import com.example.demo.service.LambdaService;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import lombok.extern.slf4j.Slf4j;
@@ -60,5 +63,23 @@ public class LambdaServiceImpl implements LambdaService {
 			return false;
 		}
 	}
-
+	
+	@Override
+	public JsonObject enviarCorreo(LambdaMailRequestSendgrid request) {
+		try {
+			log.info("LambdaServiceImpl.enviarCorreo {}", request);
+			Gson gson = new Gson();
+			String payLoad = gson.toJson(request);
+			InvokeRequest invokeRequest = new InvokeRequest().withFunctionName("lambda-mailSender-service")
+					.withPayload(payLoad);
+			InvokeResult result = awsLambda.invoke(invokeRequest);
+			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);
+			JsonElement element = JsonParser.parseString(ans);
+			log.info("Respuesta de la Lambda : " + ans);
+			return element.getAsJsonObject();
+		} catch (ServiceException e) {
+			log.error("Error al invocar lambda -> " + e.toString());
+			return new JsonObject();
+		}
+	}
 }

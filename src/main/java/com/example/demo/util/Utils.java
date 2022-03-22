@@ -17,6 +17,8 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.TimeZone;
 
+import com.example.demo.exception.BadRequestException;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -44,6 +46,14 @@ public class Utils {
 			log.error("Error {}", e);
 			return null;
 		}
+	}
+
+	public static String byteArrayToBase64(byte[] arrayBytes, String mimeType, boolean includeMime) {
+		if (arrayBytes.length == 0) {
+			throw new BadRequestException("El array de Bytes esta vacio");
+		}
+		return (includeMime ? ("data:" + mimeType + ";base64,") : "")
+				.concat(Base64.getEncoder().encodeToString(arrayBytes));
 	}
 
 	public static String fileToBase64(File file) {
@@ -96,6 +106,6 @@ public class Utils {
 
 	public static void main(String... args) {
 
-		System.out.println(dateZone("America/lima", LocalDateTime.now(),"MMMM"));
+		System.out.println(dateZone("America/lima", LocalDateTime.now(), "MMMM"));
 	}
 }
