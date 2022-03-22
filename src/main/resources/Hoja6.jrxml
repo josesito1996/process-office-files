@@ -255,7 +255,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El Empleador"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["El Trabajador"]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
