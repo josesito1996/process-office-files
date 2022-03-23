@@ -311,10 +311,6 @@
 				<reportElement x="11" y="582" width="19" height="20" uuid="374f9fd0-c453-49ed-9b28-f411ed25e22a"/>
 				<textFieldExpression><![CDATA["5.2."]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="30" y="483" width="20" height="20" uuid="0953d25c-eae6-40ae-92e2-9e47646518fe"/>
-				<textFieldExpression><![CDATA["d)"]]></textFieldExpression>
-			</textField>
 		</band>
 	</detail>
 	<pageFooter>

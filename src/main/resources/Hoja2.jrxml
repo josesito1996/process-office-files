@@ -337,10 +337,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA["La remuneración del Trabajador se encuentra sujeta a los descuentos y retenciones de ley y a las que ordenen las Autoridades; así como a las retenciones que el Trabajador autorice de manera voluntaria, en forma expresa y por escrito."]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="27" y="503" width="20" height="20" uuid="2034ee28-5c34-4477-be01-6e2fb73a47b3"/>
-				<textFieldExpression><![CDATA["e)"]]></textFieldExpression>
-			</textField>
 		</band>
 	</detail>
 	<columnFooter>
