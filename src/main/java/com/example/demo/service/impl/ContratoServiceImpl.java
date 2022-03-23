@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import static com.example.demo.util.Utils.byteArrayToBase64;
+import static com.example.demo.util.Utils.textToLineBreaks;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -83,6 +84,15 @@ public class ContratoServiceImpl implements ContratoService {
 		ClausulaRequest clausula = request.getClausulas();
 		DatosEmpleadorRequest datosEmpleador = datosPrincipales.getDatosEmpleador();
 		DatosTrabajadorRequest datoTrabajador = datosPrincipales.getDatosTrabajador();
+		String tipoContrato = "";
+		if (request.getClausulas().getTipoContrato().equals("Confianza")) {
+			tipoContrato = " Confianza, pues laborará en contacto directo con el Empleador y/o sus representantes, proporcionando reportes claves y desarrollando funciones de cuya actividad dependerá, en parte, el resultado del negocio";
+		} else if (request.getClausulas().getTipoContrato().equals("Dirección")) {
+			tipoContrato = "Dirección, ejerciendo la representación del Empleador";
+		}
+		String laboresAsignadas1 = textToLineBreaks(clausula.getLaboresAsignadas(), ",",
+				"Cumplir con todas las demás funciones que se le encomienden y que fueren necesarias para la empresa por la propia naturaleza de su puesto.");
+		String laboresAsignadas2 = textToLineBreaks(clausula.getLaboresAsignadas2(), ",", null);
 		return ContratoRequestJasper.builder().idTemplate(request.getIdTemplate())
 				.razonSocial(datosEmpleador.getRazonSocial()).nroPartida(datosEmpleador.getNroPartida())
 				.oficinaRegistral(datosEmpleador.getOficinaRegistral()).ruc(datosEmpleador.getRuc())
@@ -104,11 +114,11 @@ public class ContratoServiceImpl implements ContratoService {
 				.provinciaTrabajador(datoTrabajador.getProvinciaTrabajador())
 				.distritoTrabajador(datoTrabajador.getDistritoTrabajador()).rubro(clausula.getRubro())
 				.desempenio(clausula.getDesempenio()).experiencia(clausula.getExperiencia()).cargo(clausula.getCargo())
-				.actividad(clausula.getActividad()).laboresAsignadas(clausula.getLaboresAsignadas())
-				.areaLaboral(clausula.getAreaLaboral()).tipoContrato(clausula.getTipoContrato())
+				.actividad(clausula.getActividad()).laboresAsignadas(laboresAsignadas1)
+				.areaLaboral(clausula.getAreaLaboral()).tipoContrato(tipoContrato)
 				.fechaInicio(clausula.getFechaInicio()).fechaHasta(clausula.getFechaHasta())
 				.esIndefinido(clausula.isEsIndefinido()).sueldo(clausula.getSueldo()).moneda(clausula.getMoneda())
-				.laboresAsignadas2(clausula.getLaboresAsignadas2()).dia(Utils.dateZone(zone, fechaActual, "dd"))
+				.laboresAsignadas2(laboresAsignadas2).dia(Utils.dateZone(zone, fechaActual, "dd"))
 				.mes(Utils.dateZone(zone, fechaActual, "MMMM")).anio(Utils.dateZone(zone, fechaActual, "yyyy")).build();
 	}
 }

@@ -13,9 +13,11 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.stream.Collectors;
 
 import com.example.demo.exception.BadRequestException;
 
@@ -104,8 +106,10 @@ public class Utils {
 		return java.util.Date.from(dateToConvert.atZone(ZoneId.systemDefault()).toInstant());
 	}
 
-	public static void main(String... args) {
-
-		System.out.println(dateZone("America/lima", LocalDateTime.now(), "MMMM"));
+	public static String textToLineBreaks(String text, String delimiter, String relleno) {
+		String[] descompuesto = text.split(delimiter);
+		return Arrays.asList(descompuesto).stream().collect(Collectors.joining("\n"))
+				.concat(relleno != null ? "\n".concat(relleno) : "");
 	}
+
 }

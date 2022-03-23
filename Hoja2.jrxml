@@ -218,14 +218,14 @@
 				<textFieldExpression><![CDATA["Una remuneración mensual bruta ascendente a S/ "+$F{sueldo}+" y 00/100 soles."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="468" width="447" height="19" uuid="674bf015-d65f-4e93-9715-66d2d43af179"/>
+				<reportElement x="50" y="471" width="447" height="19" uuid="674bf015-d65f-4e93-9715-66d2d43af179"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Gratificaciones legales y beneficios sociales que correspondan de acuerdo a ley."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="50" y="480" width="370" height="20" forecolor="#000000" uuid="6470c7b4-0e6d-4c2e-9a5e-7bee5ec38bb5"/>
+				<reportElement x="50" y="481" width="370" height="20" forecolor="#000000" uuid="6470c7b4-0e6d-4c2e-9a5e-7bee5ec38bb5"/>
 				<textElement textAlignment="Justified" verticalAlignment="Top">
 					<font fontName="Arial" isBold="false"/>
 				</textElement>
