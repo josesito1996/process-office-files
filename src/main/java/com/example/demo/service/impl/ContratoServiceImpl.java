@@ -1,9 +1,14 @@
 package com.example.demo.service.impl;
 
+// dateZone upperCaseFirst
 import static com.example.demo.util.Utils.byteArrayToBase64;
 import static com.example.demo.util.Utils.textToLineBreaks;
+import static com.example.demo.util.Utils.dateZone;
+import static com.example.demo.util.Utils.stringToLocalDate;
+import static com.example.demo.util.Utils.upperCaseFirst;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -48,29 +53,27 @@ public class ContratoServiceImpl implements ContratoService {
 			throw new BadRequestException("No Existe contrato con el ID " + request);
 		}
 		String mimeType = "aplication/pdf";
+		String timeZone = "America/Lima";
 		byte[] arrayBytes = jasperService.pdfContrato1(list);
 		ContratoRequestJasper contrato = list.stream().findFirst().orElse(ContratoRequestJasper.builder().build());
 		String base64 = byteArrayToBase64(arrayBytes, mimeType, false);
-		
+
 		Map<String, Object> templateLambda = new HashMap<>();
-		templateLambda.put("user", request.getCorreo());
-		templateLambda.put("fehaInicio", contrato.getFechaInicio().toString());
-		
+		templateLambda.put("user", contrato.getNombresTrabajador());
+		LocalDateTime fecha = LocalDateTime.of(stringToLocalDate(contrato.getFechaInicio()), LocalTime.now());
+		String dayName = dateZone(timeZone, fecha, "EEEE");
+		String day = upperCaseFirst(dateZone(timeZone, fecha, "dd"));
+		String monthName = upperCaseFirst(dateZone(timeZone, fecha, "MMMM"));
+		templateLambda.put("fehaInicio",  dayName.concat(" ").concat(day).concat(" de ").concat(monthName));
+
 		JsonObject obj = lambdaService
-				.enviarCorreo(
-						LambdaMailRequestSendgrid.builder().emailFrom("notificacion.sami@sidetechsolutions.com")			
-								.emailTo(request.getCorreo())
-								.templateId("d-09910a3b361c4ec5ba5b8e2852a35caf")
-								.attachments(Arrays.asList(
-										Attachment.builder()
-										.content64(base64)
-										.disposition("inline")
-										.fileName(contrato.getNombresTrabajador() + " "
-												+ contrato.getApellidosTrabajador().concat(".pdf"))
-										.type(mimeType)
-										.build()))
-								.dynamicTemplate(templateLambda)
-								.build());
+				.enviarCorreo(LambdaMailRequestSendgrid.builder().emailFrom("notificacion.sami@sidetechsolutions.com")
+						.emailTo(request.getCorreo()).templateId("d-09910a3b361c4ec5ba5b8e2852a35caf")
+						.attachments(Arrays.asList(Attachment.builder().content64(base64).disposition("inline")
+								.fileName(contrato.getNombresTrabajador() + " "
+										+ contrato.getApellidosTrabajador().concat(".pdf"))
+								.type(mimeType).build()))
+						.dynamicTemplate(templateLambda).build());
 		int statusCode = obj.get("code").getAsInt();
 		return statusCode == 202;
 	}
@@ -127,9 +130,7 @@ public class ContratoServiceImpl implements ContratoService {
 				.areaLaboral(clausula.getAreaLaboral()).tipoContrato(tipoContrato)
 				.fechaInicio(clausula.getFechaInicio()).fechaHasta(clausula.getFechaHasta())
 				.esIndefinido(clausula.isEsIndefinido()).sueldo(clausula.getSueldo()).moneda(clausula.getMoneda())
-				.laboresAsignadas2(laboresAsignadas2)
-				.dia(Utils.dateZone(zone, fechaActual, "dd"))
-				.mes(Utils.dateZone(zone, fechaActual, "MMMM"))
-				.anio(Utils.dateZone(zone, fechaActual, "yyyy")).build();
+				.laboresAsignadas2(laboresAsignadas2).dia(Utils.dateZone(zone, fechaActual, "dd"))
+				.mes(upperCaseFirst(Utils.dateZone(zone, fechaActual, "MMMM"))).anio(Utils.dateZone(zone, fechaActual, "yyyy")).build();
 	}
 }

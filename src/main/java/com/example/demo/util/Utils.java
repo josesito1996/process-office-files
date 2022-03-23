@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -123,5 +124,28 @@ public class Utils {
 			}
 		}
 		return builder.toString();
+	}
+
+	public static LocalDate stringToLocalDate(String fecha) {
+		return LocalDate.parse(fecha);
+	}
+
+	/**
+	 * Primera letra en mayuscula.
+	 * @param val
+	 * @return
+	 */
+	public static String upperCaseFirst(String val) {
+		char[] arr = val.toCharArray();
+		arr[0] = Character.toUpperCase(arr[0]);
+		return new String(arr);
+	}
+
+	public static void main(String... args) {
+		String zoneId = "America/Lima";
+		LocalDateTime fecha = LocalDateTime.now();
+		System.out.println(dateZone(zoneId, fecha, "EEEE"));
+		System.out.println(dateZone(zoneId, fecha, "dd"));
+		System.out.println(dateZone(zoneId, fecha, "MMMM"));
 	}
 }
