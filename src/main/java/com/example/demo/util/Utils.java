@@ -11,11 +11,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
@@ -99,7 +101,7 @@ public class Utils {
 		TimeZone timeZone = TimeZone.getTimeZone(zoneTime);
 		Date fecha = convertToDateViaInstant(fechaActual);
 		return fecha.toInstant().atZone(timeZone.toZoneId()).toLocalDateTime()
-				.format(DateTimeFormatter.ofPattern(paramDate));
+				.format(DateTimeFormatter.ofPattern(paramDate, new Locale("es", "ES")));
 	}
 
 	private static Date convertToDateViaInstant(LocalDateTime dateToConvert) {
@@ -111,6 +113,5 @@ public class Utils {
 		return Arrays.asList(descompuesto).stream().collect(Collectors.joining("\n"))
 				.concat(relleno != null ? "\n".concat(relleno) : "").replace(" ", "");
 	}
-	
 
 }
