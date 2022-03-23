@@ -118,7 +118,9 @@ public class ContratoServiceImpl implements ContratoService {
 				.areaLaboral(clausula.getAreaLaboral()).tipoContrato(tipoContrato)
 				.fechaInicio(clausula.getFechaInicio()).fechaHasta(clausula.getFechaHasta())
 				.esIndefinido(clausula.isEsIndefinido()).sueldo(clausula.getSueldo()).moneda(clausula.getMoneda())
-				.laboresAsignadas2(laboresAsignadas2).dia(Utils.dateZone(zone, fechaActual, "dd"))
-				.mes(Utils.dateZone(zone, fechaActual, "MMMM")).anio(Utils.dateZone(zone, fechaActual, "yyyy")).build();
+				.laboresAsignadas2(laboresAsignadas2)
+				.dia(Utils.dateZone(zone, fechaActual, "dd"))
+				.mes(Utils.dateZone(zone, fechaActual, "MMMM"))
+				.anio(Utils.dateZone(zone, fechaActual, "yyyy")).build();
 	}
 }

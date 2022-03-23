@@ -181,7 +181,7 @@
 				<textFieldExpression><![CDATA["Al término de la relación laboral, el Trabajador deberá devolver al Empleador cualquier información que posea, relativa al trabajo desarrollado."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="2" y="370" width="470" height="40" uuid="32297fc0-cb7e-4014-8e76-a1be54ef56fc"/>
+				<reportElement x="2" y="370" width="496" height="40" uuid="32297fc0-cb7e-4014-8e76-a1be54ef56fc"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="10.5"/>
 				</textElement>

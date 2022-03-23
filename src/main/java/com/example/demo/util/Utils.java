@@ -109,7 +109,8 @@ public class Utils {
 	public static String textToLineBreaks(String text, String delimiter, String relleno) {
 		String[] descompuesto = text.split(delimiter);
 		return Arrays.asList(descompuesto).stream().collect(Collectors.joining("\n"))
-				.concat(relleno != null ? "\n".concat(relleno) : "");
+				.concat(relleno != null ? "\n".concat(relleno) : "").replace(" ", "");
 	}
+	
 
 }
