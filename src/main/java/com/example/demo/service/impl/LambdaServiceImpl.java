@@ -70,7 +70,7 @@ public class LambdaServiceImpl implements LambdaService {
 			log.info("LambdaServiceImpl.enviarCorreo {}", request);
 			Gson gson = new Gson();
 			String payLoad = gson.toJson(request);
-			InvokeRequest invokeRequest = new InvokeRequest().withFunctionName("lambda-mailSender-service")
+			InvokeRequest invokeRequest = new InvokeRequest().withFunctionName("lambda-mailSender-service-template")
 					.withPayload(payLoad);
 			InvokeResult result = awsLambda.invoke(invokeRequest);
 			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);

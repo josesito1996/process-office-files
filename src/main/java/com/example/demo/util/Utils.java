@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -109,9 +108,20 @@ public class Utils {
 	}
 
 	public static String textToLineBreaks(String text, String delimiter, String relleno) {
-		String[] descompuesto = text.split(delimiter);
+		String[] descompuesto = removeAllSpaces(text).split(delimiter);
 		return Arrays.asList(descompuesto).stream().collect(Collectors.joining("\n"))
-				.concat(relleno != null ? "\n".concat(relleno) : "").replace(" ", "");
+				.concat(relleno != null ? "\n".concat(relleno) : "");
 	}
 
+	private static String removeAllSpaces(String text) {
+		int size = text.length();
+		StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < size; i++) {
+			String caracter = String.valueOf(text.charAt(i));
+			if (!caracter.contains(" ")) {
+				builder.append(caracter);
+			}
+		}
+		return builder.toString();
+	}
 }

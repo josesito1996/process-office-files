@@ -5,7 +5,9 @@ import static com.example.demo.util.Utils.textToLineBreaks;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,18 +51,25 @@ public class ContratoServiceImpl implements ContratoService {
 		byte[] arrayBytes = jasperService.pdfContrato1(list);
 		ContratoRequestJasper contrato = list.stream().findFirst().orElse(ContratoRequestJasper.builder().build());
 		String base64 = byteArrayToBase64(arrayBytes, mimeType, false);
+		
+		Map<String, Object> templateLambda = new HashMap<>();
+		templateLambda.put("user", request.getCorreo());
+		templateLambda.put("fehaInicio", contrato.getFechaInicio().toString());
+		
 		JsonObject obj = lambdaService
 				.enviarCorreo(
-						LambdaMailRequestSendgrid.builder().emailFrom("notificacion.sami@sidetechsolutions.com")
-								.subject("Contrato de Trabajo : ".concat(contrato.getNombresTrabajador().concat(" ")
-										.concat(contrato.getApellidosTrabajador()).concat(" - ")
-										.concat(contrato.getNroDocumentoTrabajador())))
+						LambdaMailRequestSendgrid.builder().emailFrom("notificacion.sami@sidetechsolutions.com")			
 								.emailTo(request.getCorreo())
-								.content("Estimado colaborador, se le adjunta su correo contrato de trabajo")
-								.archivos(Arrays.asList(Attachment.builder().content64(base64).disposition("attachment")
+								.templateId("d-09910a3b361c4ec5ba5b8e2852a35caf")
+								.attachments(Arrays.asList(
+										Attachment.builder()
+										.content64(base64)
+										.disposition("inline")
 										.fileName(contrato.getNombresTrabajador() + " "
 												+ contrato.getApellidosTrabajador().concat(".pdf"))
-										.type(mimeType).build()))
+										.type(mimeType)
+										.build()))
+								.dynamicTemplate(templateLambda)
 								.build());
 		int statusCode = obj.get("code").getAsInt();
 		return statusCode == 202;

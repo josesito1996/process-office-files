@@ -1,6 +1,7 @@
 package com.example.demo.model.lambda;
 
 import java.util.List;
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,12 +20,12 @@ public class LambdaMailRequestSendgrid {
 
     private String emailFrom;
 
-    private String subject;
-
     private String emailTo;
-
-    private String content;
     
-    private List<Attachment> archivos;
+    private String templateId;
+    
+    private Map<String, Object> dynamicTemplate;
+    
+    private List<Attachment> attachments;
 
 }
