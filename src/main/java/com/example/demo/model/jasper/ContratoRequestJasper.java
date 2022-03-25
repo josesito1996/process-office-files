@@ -26,6 +26,8 @@ public class ContratoRequestJasper implements Serializable {
 
 	private static final long serialVersionUID = -8648412630248457704L;
 
+	private Long id;
+	
 	private String idTemplate;
 
 	private String razonSocial;

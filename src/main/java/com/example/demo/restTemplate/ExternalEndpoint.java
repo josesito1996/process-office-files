@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.model.jasper.ContratoRequestJasper;
+import com.example.demo.model.request.UpdateEstadoContract;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +31,14 @@ public class ExternalEndpoint {
 		log.info("ExternalEndpoint.viewOne  : {} ", id);
 		ContratoRequestJasper[] lista = restTemplate.getForObject(apiContrato.concat("viewOne/{id}"),
 				ContratoRequestJasper[].class, new Object[] { id });
-		return Arrays.asList(lista);
+		List<ContratoRequestJasper> list = Arrays.asList(lista);
+		log.info("list {}", list);
+		return list;
+	}
+	
+	public void updateEstadoContract(UpdateEstadoContract request) {
+		log.info("ExternalEndpoint.updateEstadoContract  : {} ", request);
+		restTemplate.put(apiContrato.concat("updateEstadoContract"), request);
 	}
 
 }

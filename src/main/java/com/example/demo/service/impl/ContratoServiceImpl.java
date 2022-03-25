@@ -27,6 +27,7 @@ import com.example.demo.model.jasper.DatosTrabajadorRequest;
 import com.example.demo.model.lambda.Attachment;
 import com.example.demo.model.lambda.LambdaMailRequestSendgrid;
 import com.example.demo.model.request.ContratoEnviarCorreoRequest;
+import com.example.demo.model.request.UpdateEstadoContract;
 import com.example.demo.restTemplate.ExternalEndpoint;
 import com.example.demo.service.ContratoService;
 import com.example.demo.service.JasperService;
@@ -75,6 +76,9 @@ public class ContratoServiceImpl implements ContratoService {
 								.type(mimeType).build()))
 						.dynamicTemplate(templateLambda).build());
 		int statusCode = obj.get("code").getAsInt();
+		if (statusCode == 202) {
+			external.updateEstadoContract(new UpdateEstadoContract(contrato.getId(), 6L));//ID 6 para los enviados por CORREO
+		}
 		return statusCode == 202;
 	}
 
