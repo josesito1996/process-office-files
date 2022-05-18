@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja4" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="467b1067-5120-49f3-bf23-fcd2c5c9e283">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="661" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="364" width="178" height="22" uuid="208134eb-fde3-4bb0-a237-4a7168d595c7"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO TERCERA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="364" width="198" height="22" uuid="e4ddbe7e-c3d4-4f6f-ad35-84f1b554ff2f"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": ÉTICA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="385" width="27" height="20" uuid="0869f2da-202e-489c-a0c7-3519388df11c"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["13."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="386" width="470" height="54" uuid="f90890d9-eabe-4ddd-be73-1d37d359f2e1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por la presente cláusula, se establece que, para cualquier gestión pública o privada relacionada con el presente contrato y las funciones del Trabajador, éste queda prohibido y deberá abstenerse de utilizar cualquier método o procedimiento contrario a las leyes y reglamentos, obligándose bajo responsabilidad a cumplir rigurosamente los procedimientos legales establecidos."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="590" width="469" height="41" uuid="8b8f116e-fc50-4cbe-8cb2-38847e5ec9d0"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador reconoce que la gestión de la seguridad y salud en el trabajo es un tema prioritario para el Empleador y que, por tanto, éste podrá sancionar cualquier incumplimiento vinculado con las disposiciones sobre seguridad y salud."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-4" y="590" width="24" height="20" uuid="65711886-a978-4eea-a16c-f62136e3fcfb"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["14.3."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="-1" width="27" height="20" uuid="ded44665-c980-4343-8ae7-8df89a188032"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["12.3."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="0" width="469" height="19" uuid="3cc9e6a2-d649-46c7-9483-ba92268a9dda"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Se considera también Información Confidencial, a modo enunciativo, mas no limitativo, a:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="529" width="28" height="20" uuid="b162b2bf-62a2-4ffc-b611-9f2508c9c8d1"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["14.2."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="530" width="469" height="56" uuid="a5fc6df3-99b5-4800-9bb2-727527595530"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador se obliga a conocer los riesgos a los que se pudiera ver expuesto con motivo del desempeño de sus funciones y a adoptar las recomendaciones de seguridad y salud en el trabajo para reducir o mitigar tales riesgos, observando estrictamente las pautas contenidas en la descripción de recomendaciones de seguridad y salud en el trabajo."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="98" width="447" height="34" uuid="8e02fffc-ae72-40ab-9714-64531def1e18"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Información que esté sujeta a medidas de protección razonables, de acuerdo con las circunstancias del caso, a fin de mantener su carácter confidencial."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="59" width="20" height="20" uuid="7fac6b05-cea2-4c34-9d45-9889a27baf15"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["c)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="98" width="20" height="20" uuid="0c1e54e3-5e65-4aa4-90d2-c4519fc54e2e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["d)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="21" width="20" height="20" uuid="c9fbe305-657a-4e2e-aa9f-3da45f3d46ee"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="21" width="447" height="19" uuid="37a06207-f3e0-459b-a1a2-9768462891e1"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Información que no sea de fácil acceso para terceros o público en general."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="34" width="20" height="20" uuid="d4137e98-9854-4ff1-bd3c-1ca8dbe18acc"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="34" width="447" height="30" uuid="37616665-688d-4dcb-9f22-ec78dff2b0f2"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Información que, como conjunto o por la configuración o estructuración exacta de sus componentes, no sea generalmente conocida entre los expertos en los campos correspondientes."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="59" width="447" height="44" uuid="d08a32b1-fe99-4b89-bf23-4b9087d0e6c5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Información que esté contenida en cualquier documento, incluidos los documentos en soporte electromagnético, mensajes de datos, correos electrónicos, bases de datos, software o cualquier otra forma tangible de soporte de datos o información."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="125" width="447" height="38" uuid="8387c4f3-51a9-4404-ba1f-4d3f75bd662c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Las notas, análisis, hojas de trabajo, compilaciones, comparaciones, estudios o cualquier otro documento el cual contenga, refleje, esté basado en o hubiere sido generado a partir de la Información Confidencial."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="125" width="20" height="20" uuid="61ad4c4e-7ec2-4e4b-a172-279d5c41f2d0"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["e)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="175" width="26" height="20" uuid="2cfbd969-135b-4902-b83a-d2a555763af6"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["12.4."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="176" width="469" height="34" uuid="bd890710-75e9-49d2-a26e-554db74e6caf"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las únicas excepciones al compromiso de confidencialidad asumido por el Trabajador están constituidas por los siguientes casos:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="262" width="20" height="20" uuid="c6fea4d1-2f38-4431-a857-d386453ecc49"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="210" width="447" height="58" uuid="62d78bc7-469d-41f5-a716-f8306f828321"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Cuando exista un mandato legal o judicial claro y expreso que obligue al Trabajador a poner en conocimiento de una autoridad la Información Confidencial; en tal caso, deberá avisar a la empresa la obligación de poner en conocimiento de una autoridad la Información Confidencial, inmediatamente desde que toma conocimiento de ella."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="210" width="20" height="20" uuid="4a7b55c9-14ab-424c-a5bc-6debd1ca34cf"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="262" width="447" height="30" uuid="46de62d4-f1c1-4339-b1ae-d1bd696da4db"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Cuando la información recibida sea de dominio público o haya sido divulgada de otra forma o reconocida como práctica estándar en el rubro al cual se dedica la empresa."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="290" width="447" height="30" uuid="35bc027a-4d25-4e56-8bc1-ce8f6c5bfe28"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Cuando la información sea revelada con la aprobación previa, escrita y expresa de la empresa al Trabajador, en relación con un documento o información determinados."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="290" width="20" height="20" uuid="6250a00c-9a3d-402b-990f-9268590dc362"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["c)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="330" width="469" height="34" uuid="860a1eab-42cd-4e9a-ba2a-e59e3ea7f349"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador declara que la remuneración acordada en la cláusula novena comprende cualquier compensación correspondiente a los compromisos asumidos en la presente cláusula."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="329" width="26" height="20" uuid="1193d8f4-8f22-4783-92f1-ab17b72959f2"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["12.5."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="448" width="230" height="22" uuid="03458298-fd21-41f4-aae6-b1d6ea4757a2"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": SEGURIDAD Y SALUD EN EL TRABAJO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="470" width="470" height="54" uuid="6c6f6da1-ece9-4633-be62-423c8d5bf8a4"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En cumplimiento de lo dispuesto por el literal c) del artículo 35 de la Ley N° 29783, Ley de seguridad y salud en el trabajo, el Empleador entrega al Trabajador una descripción de las recomendaciones de seguridad y salud en el trabajo para el puesto que este ocupará. En caso el Trabajador cambie de puesto, el Empleador entregará una actualización de tales recomendaciones."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="448" width="178" height="22" uuid="cf5bc9f1-82ff-4f87-9053-60f8d4b6bd94"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO  CUARTA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="469" width="27" height="20" uuid="759c54f8-d6ac-4882-962b-643adeb001c5"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["14.1."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>
