@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja3" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="0" uuid="3c97d697-9296-4871-9c83-a259958965e7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reportes-jasper\JavaAdapter.xml"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="desempenio" class="java.lang.String">
+		<fieldDescription><![CDATA[desempenio]]></fieldDescription>
+	</field>
+	<field name="rubro" class="java.lang.String">
+		<fieldDescription><![CDATA[rubro]]></fieldDescription>
+	</field>
+	<field name="ruc" class="java.lang.String">
+		<fieldDescription><![CDATA[ruc]]></fieldDescription>
+	</field>
+	<field name="esIndefinido" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[esIndefinido]]></fieldDescription>
+	</field>
+	<field name="laboresAsignadas2" class="java.lang.String">
+		<fieldDescription><![CDATA[laboresAsignadas2]]></fieldDescription>
+	</field>
+	<field name="fechaHasta" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaHasta]]></fieldDescription>
+	</field>
+	<field name="domicilioEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilioEmpleador]]></fieldDescription>
+	</field>
+	<field name="sueldo" class="java.lang.Double">
+		<fieldDescription><![CDATA[sueldo]]></fieldDescription>
+	</field>
+	<field name="distritoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[distritoEmpleador]]></fieldDescription>
+	</field>
+	<field name="actividad" class="java.lang.String">
+		<fieldDescription><![CDATA[actividad]]></fieldDescription>
+	</field>
+	<field name="razonSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[razonSocial]]></fieldDescription>
+	</field>
+	<field name="distritoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[distritoTrabajador]]></fieldDescription>
+	</field>
+	<field name="fechaInicio" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaInicio]]></fieldDescription>
+	</field>
+	<field name="experiencia" class="java.lang.String">
+		<fieldDescription><![CDATA[experiencia]]></fieldDescription>
+	</field>
+	<field name="nombreRepresentante" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreRepresentante]]></fieldDescription>
+	</field>
+	<field name="laboresAsignadas" class="java.lang.String">
+		<fieldDescription><![CDATA[laboresAsignadas]]></fieldDescription>
+	</field>
+	<field name="moneda" class="java.lang.String">
+		<fieldDescription><![CDATA[moneda]]></fieldDescription>
+	</field>
+	<field name="tipoContrato" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoContrato]]></fieldDescription>
+	</field>
+	<field name="idTemplate" class="java.lang.String">
+		<fieldDescription><![CDATA[idTemplate]]></fieldDescription>
+	</field>
+	<field name="tipoDocumentoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoDocumentoEmpleador]]></fieldDescription>
+	</field>
+	<field name="cargo" class="java.lang.String">
+		<fieldDescription><![CDATA[cargo]]></fieldDescription>
+	</field>
+	<field name="nacionalidadTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[nacionalidadTrabajador]]></fieldDescription>
+	</field>
+	<field name="provinciaEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[provinciaEmpleador]]></fieldDescription>
+	</field>
+	<field name="nroDocumentoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[nroDocumentoTrabajador]]></fieldDescription>
+	</field>
+	<field name="areaLaboral" class="java.lang.String">
+		<fieldDescription><![CDATA[areaLaboral]]></fieldDescription>
+	</field>
+	<field name="departamentoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[departamentoTrabajador]]></fieldDescription>
+	</field>
+	<field name="provinciaTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[provinciaTrabajador]]></fieldDescription>
+	</field>
+	<field name="departamentoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[departamentoEmpleador]]></fieldDescription>
+	</field>
+	<field name="nombresTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[nombresTrabajador]]></fieldDescription>
+	</field>
+	<field name="domicilioTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilioTrabajador]]></fieldDescription>
+	</field>
+	<field name="tipoDocumentoTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoDocumentoTrabajador]]></fieldDescription>
+	</field>
+	<field name="nroPartida" class="java.lang.String">
+		<fieldDescription><![CDATA[nroPartida]]></fieldDescription>
+	</field>
+	<field name="apellidosTrabajador" class="java.lang.String">
+		<fieldDescription><![CDATA[apellidosTrabajador]]></fieldDescription>
+	</field>
+	<field name="nroDocumentoEmpleador" class="java.lang.String">
+		<fieldDescription><![CDATA[nroDocumentoEmpleador]]></fieldDescription>
+	</field>
+	<field name="oficinaRegistral" class="java.lang.String">
+		<fieldDescription><![CDATA[oficinaRegistral]]></fieldDescription>
+	</field>
+	<field name="apellidoRepresentante" class="java.lang.String">
+		<fieldDescription><![CDATA[apellidoRepresentante]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<detail>
+		<band height="689" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="1" width="120" height="22" uuid="797b2e11-9173-4e90-b4fa-50542fb5b15e"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="23" width="470" height="66" uuid="436d43e0-b458-491c-8351-13e01246c64e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador deberá cumplir diligentemente, y con base al principio de la buena fe laboral, las órdenes, disposiciones y directivas que, por necesidades del servicio, impartan sus superiores en la organización del Empleador, conforme a los términos prescritos en el presente contrato y a las facultades de dirección y reglamentación que le corresponden conforme a la legislación vigente. En particular, el Trabajador asume las siguientes obligaciones:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="23" width="24" height="20" uuid="35232d24-6ac6-4fa1-b105-728623bf6953"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[10.1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="27" y="312" width="470" height="50" uuid="9541994a-73f4-4b4c-9bcd-b31ae5842f9d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El incumplimiento de cualquiera de las obligaciones del Trabajador será considerado como falta grave conforme a lo dispuesto en la LPCL, y facultará al Empleador a iniciar las acciones legales que pudieran corresponder en defensa de sus derechos y a obtener la indemnización por daños y perjuicios a que hubiera lugar."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="312" width="26" height="20" uuid="b5a7f020-7142-48f4-9d14-30d846b6c3cb"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[10.2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="372" width="170" height="22" uuid="bec6a683-da6d-4d64-b027-dc2ff59e6f73"/>
+				<textElement markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO PRIMERA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="372" width="198" height="22" uuid="406cbfde-ad0d-43e6-9177-12f9b55ba3bb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": USO DE MEDIOS INFORMATICOS"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="392" width="27" height="20" uuid="0ffa6781-58ed-4d96-912b-2592ac7f0aa6"/>
+				<textFieldExpression><![CDATA["11."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="393" width="470" height="79" uuid="6ea0643a-9c2b-4a14-8a86-d3bcd4bc3875"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sin perjuicio de las directivas que sobre el particular emita el Empleador, éste proporcionará al Trabajador diverso soporte informático (hardware y software) para el cabal desempenio de sus labores, tales como computadora, acceso al servidor del Empleador, unidades de almacenamiento de datos o similares. El Trabajador declara conocer que dicho soporte sólo podrá ser empleado para asuntos propios de su trabajo; consecuentemente, dicho soporte no podrá ser utilizado para asuntos ajenos a la labor del Trabajador o que sean personales."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="1" width="198" height="22" uuid="232e3a66-1714-4b46-a2a3-db0b7985b871"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": OBLIGACIONES DEL TRABAJADOR"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="562" width="469" height="127" uuid="926d4dab-a530-4038-8e10-dd68d4dc54e4"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Se considera Información Confidencial a toda información y datos reservados relacionada con las actividades de la Empresa o las empresas del grupo del que forma parte la Empresa, a los cuales haya tenido acceso por cualquier medio o mecanismo, ya sea directa o indirectamente, incluyendo, a modo enunciativo mas no limitativo, informes, opiniones, estrategias de venta u otras, técnicas, modelos, know-how, best practices, procesos, programas, investigaciones, proyectos, información objeto de derechos de autor, patentes, información económica o financiera, licitaciones, cotizaciones, estudios, lista de clientes, inversionistas, proveedores, empleados, información sobre productos o servicios, relaciones de negocios y contractuales, tarifas o precios, información sobre el mercado, pronósticos de negocios, planes de expansión, planes de mercadeo, y en general cualquier información sin restricciones ni limitaciones."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="562" width="27" height="20" uuid="e6c72723-0445-455a-8ae8-2f78a6a6a61c"/>
+				<textFieldExpression><![CDATA["12.2."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="90" width="447" height="41" uuid="0b78cb47-5955-4527-8297-a35689bc52dd"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad. El Trabajador declara que se obliga en forma expresa, a poner al servicio del Empleador toda su capacidad, diligencia y lealtad en el cargo para el que es contratado."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="190" width="447" height="40" uuid="044c1f12-4254-4eeb-bb38-12791afdc5d3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Devolver, a la terminación de la relación laboral o cuando le sea requerido, todos los materiales, documentos, informes o bienes de similar naturaleza que el Empleador le hubiere entregado para el desarrollo de sus labores o que poseyera en ocasión a su cargo."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="240" width="20" height="20" uuid="19ebb5c9-04af-4c6d-996f-7fbcaf7f2db9"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["d)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="240" width="447" height="40" uuid="4a51fe91-9ecc-497c-9863-5dd130984c9c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Cumplir con las disposiciones del Reglamento Interno de Trabajo, Reglamento Interno de Seguridad y Salud en el Trabajo, políticas y/o lineamientos y, en general, todas aquellas que sean impartidas por la Empresa."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="140" width="20" height="20" uuid="53bcc18b-6875-4b09-8432-2667e8deb6b8"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="140" width="447" height="40" uuid="90bd7c7b-3b61-4b36-b5bd-f9449ca45223"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Tomar todas las medidas necesarias para prevenir accidentes, utilizar los equipos de protección que suministre el Empleador y seguir las instrucciones que sobre seguridad y salud en el trabajo imparta el mismo."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="190" width="20" height="20" uuid="db6559eb-4c4a-4ca9-ab85-f60dd4a256e0"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["c)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="90" width="20" height="20" uuid="1fb2947f-0284-4e44-985d-47708967847b"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="290" width="447" height="20" uuid="a4d3177a-f1c3-431e-950c-263df45140f1"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["Cualquier otra señalada en la legislación vigente."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="290" width="20" height="20" uuid="7813737b-1bb1-4161-be4f-d16c9673283a"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["e)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="481" width="198" height="22" uuid="7cf6b929-dcef-411f-914e-8231505db017"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": CONFIDENCIALIDAD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="501" width="27" height="20" uuid="2e9f4b56-4a67-49bf-9af0-13d453ca5948"/>
+				<textFieldExpression><![CDATA["12.1."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="502" width="470" height="50" uuid="a3726feb-c66f-4f01-aeff-031e103d8df8"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El Trabajador se obliga a mantener en absoluta reserva y secreto, y a no revelar, divulgar o facilitar bajo cualquier forma o mecanismo, a ninguna persona natural o jurídica, sea esta pública o privada, y a no utilizar para su propio beneficio o para beneficio de cualquier otra persona natural o jurídica, pública o privada, la Información Confidencial a la que haya tenido acceso."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="481" width="170" height="22" uuid="21a54f02-80e5-4e5d-90ff-53b043f1623f"/>
+				<textElement markup="styled">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DÉCIMO SEGUNDA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="1" width="100" height="30" forecolor="#FFFFFF" uuid="39dfbb1b-b812-4de1-87be-fd93171156aa"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+</jasperReport>
