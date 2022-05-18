@@ -4,6 +4,7 @@ import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRep
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -12,12 +13,17 @@ import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.lambda.AWSLambda;
 import com.amazonaws.services.lambda.AWSLambdaClientBuilder;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Configuration
 @EnableDynamoDBRepositories(basePackages = "com.example.demo.repo")
+@Slf4j
 public class Config {
 
 	@Value("${aws.config.access-key}")
@@ -31,6 +37,9 @@ public class Config {
 
 	@Value("${aws.config.region}")
 	private String region;
+	
+	@Value("${spring.profiles.active}")
+	private String enviroment;
 
 	public AwsClientBuilder.EndpointConfiguration endpointConfiguration() {
 		return new AwsClientBuilder.EndpointConfiguration(serviceEndpoint, region);
@@ -41,6 +50,15 @@ public class Config {
 
 		return AmazonDynamoDBClientBuilder.standard().withEndpointConfiguration(endpointConfiguration())
 				.withCredentials(awsCredentialsProvider()).build();
+	}
+	
+	@Bean
+	@Primary
+	public DynamoDBMapper dynamoDBMapper(AmazonDynamoDB amazonDynamoDB) {
+		log.info("Enviromment {}", enviroment);
+		DynamoDBMapper mapper = new DynamoDBMapper(amazonDynamoDB,
+				new DynamoDBMapperConfig.Builder().withTableNameResolver(new TableNameResolver(enviroment)).build());
+		return mapper;
 	}
 
 	@Bean
