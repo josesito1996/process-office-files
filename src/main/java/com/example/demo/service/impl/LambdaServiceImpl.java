@@ -3,6 +3,7 @@ package com.example.demo.service.impl;
 import java.nio.charset.StandardCharsets;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.amazonaws.services.lambda.AWSLambda;
@@ -27,13 +28,21 @@ public class LambdaServiceImpl implements LambdaService {
 	@Autowired
 	AWSLambda awsLambda;
 
+	@Value("${spring.profiles.active}")
+	private String enviroment;
+
+	private String prefixEnviromentBucket() {
+		return enviroment.equals("dev") ? "" : "-".concat(enviroment);
+	}
+
 	@Override
 	public String obtenerBase64(LambdaFileBase64Request request) {
 		log.info("LambdaServiceImpl.obtenerBase64 {}", request);
 		try {
 			Gson gson = new Gson();
 			String payLoad = gson.toJson(request);
-			InvokeRequest invokeRequest = new InvokeRequest().withFunctionName("lambda-test").withPayload(payLoad);
+			InvokeRequest invokeRequest = new InvokeRequest()
+					.withFunctionName("lambda-test".concat(prefixEnviromentBucket())).withPayload(payLoad);
 			InvokeResult result = awsLambda.invoke(invokeRequest);
 			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);
 			log.info("Lambdaresponse {}", ans);
@@ -52,18 +61,19 @@ public class LambdaServiceImpl implements LambdaService {
 			Gson gson = new Gson();
 			String payLoad = gson.toJson(request);
 			log.info("PayLoad {}", payLoad);
-			InvokeRequest invokeRequest = new InvokeRequest().withFunctionName("lambda-test").withPayload(payLoad);
+			InvokeRequest invokeRequest = new InvokeRequest()
+					.withFunctionName("lambda-test".concat(prefixEnviromentBucket())).withPayload(payLoad);
 			InvokeResult result = awsLambda.invoke(invokeRequest);
 			log.info("REsult {}", result.getPayload());
 			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);
-			log.info("LambdaResponse {}",ans);
+			log.info("LambdaResponse {}", ans);
 			return Boolean.parseBoolean(ans);
 		} catch (Exception e) {
 			log.error("Error al cargar base64 {}", e);
 			return false;
 		}
 	}
-	
+
 	@Override
 	public JsonObject enviarCorreo(LambdaMailRequestSendgrid request) {
 		try {
