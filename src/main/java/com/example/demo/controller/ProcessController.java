@@ -1,11 +1,11 @@
 package com.example.demo.controller;
 
+import static com.example.demo.util.Contants.REGEX_UUID;
 import static com.example.demo.util.Utils.base64ToFile;
 import static com.example.demo.util.Utils.copyInputStreamToFile;
 import static com.example.demo.util.Utils.fileNameNoExtension;
 import static com.example.demo.util.Utils.fileToBase64;
 import static com.example.demo.util.Utils.getExtension;
-import static com.example.demo.util.Contants.REGEX_UUID;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +16,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -32,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.example.demo.config.EndpointProperties;
 import com.example.demo.exception.BadRequestException;
 import com.example.demo.lambda.LambdaFileBase64Request;
 import com.example.demo.lambda.LambdaFileRequest;
@@ -64,9 +64,10 @@ public class ProcessController {
 
 	@Autowired
 	ResourceSamiService resourceSamiService;
-
+	
 	@Autowired
-	Environment entornos;
+	EndpointProperties endpointProperties;
+
 
 	@GetMapping(path = "/lambdaTest/{id}")
 	public String lambdaTest(@PathVariable String id) {
@@ -161,7 +162,7 @@ public class ProcessController {
 					throw new BadRequestException("Error al cargar arhivo de imagen");
 				}
 				if (filePng.delete()) {
-					String url = "https://79z25zohcj.execute-api.us-east-2.amazonaws.com/dev/api-files/fileTest/";
+					String url = endpointProperties.getApiGatewayUrl().concat("/api-files/fileTest/");
 					String filePngName = resource.getId();
 					resource.setPngFileName(fileNamePng);
 					resource.setUrl(url.concat(filePngName).concat("?condicion=true"));
