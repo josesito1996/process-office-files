@@ -1,17 +1,17 @@
 package com.example.demo.service.impl;
 
-import static com.example.demo.util.Utils.getExtension;
 import static com.example.demo.util.Utils.base64Complete;
+import static com.example.demo.util.Utils.base64ToFile;
+import static com.example.demo.util.Utils.fileToBase64;
+import static com.example.demo.util.Utils.getExtension;
 
 import java.io.File;
 import java.util.Arrays;
 
-import static com.example.demo.util.Utils.base64ToFile;
-import static com.example.demo.util.Utils.fileToBase64;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.config.EndpointProperties;
 import com.example.demo.exception.BadRequestException;
 import com.example.demo.lambda.LambdaFileBase64Request;
 import com.example.demo.lambda.LambdaFileRequest;
@@ -30,6 +30,9 @@ public class ActuacionFileServiceImpl implements ActuacionFileService {
 
 	@Autowired
 	ImageService imageService;
+	
+	@Autowired
+	EndpointProperties endpointProperties;
 
 	@Override
 	public ActuacionFileResponse uploadFile(ActuacionFileRequest request) {
@@ -75,7 +78,7 @@ public class ActuacionFileServiceImpl implements ActuacionFileService {
 						.bucketName(request.getBucketName())
 						.build());
 				if (resultado) {
-					String url = "https://79z25zohcj.execute-api.us-east-2.amazonaws.com/dev/api-files/fileTestActuacion/";
+					String url = endpointProperties.getApiGatewayUrl().concat("/api-files/fileTestActuacion/");
 					return ActuacionFileResponse.builder()
 							.id(request.getIdArchivo())
 							.url(url.concat(request.getIdArchivo()))
