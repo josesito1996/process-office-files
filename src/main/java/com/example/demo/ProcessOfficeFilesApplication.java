@@ -11,10 +11,7 @@ import com.example.demo.service.ImageService;
 import com.example.demo.service.LambdaService;
 import com.example.demo.service.ResourceSamiService;
 
-import lombok.extern.slf4j.Slf4j;
-
 @SpringBootApplication
-@Slf4j
 public class ProcessOfficeFilesApplication implements CommandLineRunner {
 
 	@Autowired

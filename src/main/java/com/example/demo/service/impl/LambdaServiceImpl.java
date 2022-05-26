@@ -45,7 +45,7 @@ public class LambdaServiceImpl implements LambdaService {
 					.withFunctionName("lambda-test".concat(prefixEnviromentBucket())).withPayload(payLoad);
 			InvokeResult result = awsLambda.invoke(invokeRequest);
 			String ans = new String(result.getPayload().array(), StandardCharsets.UTF_8);
-			log.info("Lambdaresponse {}", ans);
+			log.info("Lambdaresponse {}", ans.substring(1, 100));
 			JsonElement element = JsonParser.parseString(ans);
 			return element.getAsString().replace("\n", "");
 		} catch (Exception e) {
@@ -60,7 +60,7 @@ public class LambdaServiceImpl implements LambdaService {
 		try {
 			Gson gson = new Gson();
 			String payLoad = gson.toJson(request);
-			log.info("PayLoad {}", payLoad);
+			log.info("PayLoad {}", payLoad.substring(1, 100));
 			InvokeRequest invokeRequest = new InvokeRequest()
 					.withFunctionName("lambda-test".concat(prefixEnviromentBucket())).withPayload(payLoad);
 			InvokeResult result = awsLambda.invoke(invokeRequest);
