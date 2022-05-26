@@ -23,11 +23,22 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class ImageServiceImpl implements ImageService {
 
-	public String filesFolder () {
-		//return System.getenv("FILES_FOLDER").concat("/");
+	// private final String WARN = "<w:p><w:pPr /><w:r><w:rPr><w:color
+	// w:val=\"FF0000\" /><w:sz w:val=\"24\" /></w:rPr><w:t
+	// xml:space=\"preserve\">Evaluation Warning: The document was created with
+	// Spire.Doc for JAVA.</w:t></w:r></w:p>";
+
+	public String filesFolder() {
+		// return System.getenv("FILES_FOLDER").concat("/");
 		return "";
 	}
-	
+
+	/*
+	 * public File fileWithoutAlertMessage(File file) { FileReader fileReader = new
+	 * FileReader(file); String str = fileReader.readString(); str =
+	 * str.replaceAll(WARN,""); FileWriter fileWriter = new FileWriter(file); return
+	 * fileWriter.write(str); }
+	 */
 	@Override
 	public File imageWord(File fileWord) {
 		log.info("ImageServiceImpl.imageWord");
